@@ -1,0 +1,42 @@
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.exe.config
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.exe
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.pdb
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.AssemblyReference.cache
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmPrincipal.resources
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.Properties.Resources.resources
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.GenerateResource.cache
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.CoreCompileInputs.cache
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.exe
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.pdb
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmLogin.resources
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCrearReporte.resources
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\bin\Debug\ProjectSGR.exe.config
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\bin\Debug\ProjectSGR.exe
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\bin\Debug\ProjectSGR.pdb
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.AssemblyReference.cache
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCrearReporte.resources
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.frmLogin.resources
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.frmPrincipal.resources
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.Properties.Resources.resources
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.GenerateResource.cache
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.CoreCompileInputs.cache
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.exe
+C:\Users\Alejandrina\Desktop\PROYECTO_SGR\ProyectoSGR\ProjectSGR\obj\Debug\ProjectSGR.pdb
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmVerReporte.resources
+C:\Users\Ever Corazón\source\repos\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.vReporte.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.exe.config
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.exe
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\ProjectSGR.pdb
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.AssemblyReference.cache
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCrearReporte.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmLogin.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmPrincipal.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmVerReporte.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.Properties.Resources.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.vReporte.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.GenerateResource.cache
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.CoreCompileInputs.cache
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.exe
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.pdb
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCrearUsuario.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEditarUsuario.resources
