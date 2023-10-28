@@ -49,9 +49,8 @@ namespace ProjectSGR
             
             frmLogin cerrarLogin = new frmLogin();
             cerrarLogin.ShowDialog();
-            Usuarios.idUsuario = 0;
-            this.Close();
-
+            //Usuarios.idUsuario = 0;
+            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

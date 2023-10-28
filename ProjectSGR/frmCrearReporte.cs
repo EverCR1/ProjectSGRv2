@@ -35,18 +35,10 @@ namespace ProjectSGR
         {
 
             if (e.KeyCode == Keys.Enter)
-            {
-                
+            {     
                 e.SuppressKeyPress = true; // Evita que se escriba el salto de línea en el TextBox actual
                 SelectNextControl((Control)sender, true, true, true, true);
-
             }
-
-            //else if (e.KeyData == Keys.Up)
-            //{
-            //    e.SuppressKeyPress = true; // Evita que se escriba el salto de línea en el TextBox actual
-            //    SelectNextControl((Control)sender, true, true, true, true);
-            //}
 
         }
 
@@ -62,21 +54,23 @@ namespace ProjectSGR
                 for (int i = 1; i <= cantidad; i++)
                 {
 
-                    var label = new Label
+                var label = new Label
 
-                    {
+                {
                         Text = "Ingresos Viaje " + i + ":",
-                        Location = new Point(10, 30 * i)
-
+                        Location = new Point(10, 30 * i),
+                        Width = 130
                     };
 
-                    var textBox = new System.Windows.Forms.TextBox
+                var textBox = new System.Windows.Forms.TextBox
 
-                    {
-                        Location = new Point(120, 30 * i),
-                        Width = 100
+                {
+                        Location = new Point(160, 30 * i),
+                        Width = 100,
+                        
                     };
 
+                    textBox.BackColor = Color.LightGray;
                     textBox.KeyDown += TextBox_KeyDown;
                     textBox.KeyPress += TextBox_KeyPress;
 
@@ -111,7 +105,7 @@ namespace ProjectSGR
             //int comprobarV = int.Parse(txtCantViajes.Text);
             int.TryParse(txtCantViajes.Text, out int comprobarV);
 
-            if (comprobarV > 0 && comprobarV < 11){
+            if (comprobarV > 0 && comprobarV < 9){
                 panelViajes.Visible = true;
                 crearTextBox(comprobarV);
                 btnLimpiar.Visible = true;
@@ -383,6 +377,7 @@ namespace ProjectSGR
                     
                     Console.WriteLine(idd);
                     reporte.EditarReporte(idd);
+                    
                     Operacion = "Crear";
                     MessageBox.Show("Reporte actualizado exitosamente");
                     this.Close();

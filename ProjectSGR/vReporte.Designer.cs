@@ -65,251 +65,300 @@
             this.datosRepDetalles.AllowUserToAddRows = false;
             this.datosRepDetalles.AllowUserToDeleteRows = false;
             this.datosRepDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datosRepDetalles.Location = new System.Drawing.Point(104, 111);
+            this.datosRepDetalles.Location = new System.Drawing.Point(330, 135);
             this.datosRepDetalles.Name = "datosRepDetalles";
             this.datosRepDetalles.ReadOnly = true;
             this.datosRepDetalles.RowHeadersWidth = 51;
             this.datosRepDetalles.RowTemplate.Height = 24;
-            this.datosRepDetalles.Size = new System.Drawing.Size(340, 166);
+            this.datosRepDetalles.Size = new System.Drawing.Size(340, 227);
             this.datosRepDetalles.TabIndex = 0;
             // 
             // txtViajes
             // 
-            this.txtViajes.Location = new System.Drawing.Point(684, 28);
+            this.txtViajes.BackColor = System.Drawing.Color.LightGray;
+            this.txtViajes.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtViajes.Location = new System.Drawing.Point(410, 2);
             this.txtViajes.Name = "txtViajes";
             this.txtViajes.ReadOnly = true;
-            this.txtViajes.Size = new System.Drawing.Size(100, 22);
+            this.txtViajes.Size = new System.Drawing.Size(100, 31);
             this.txtViajes.TabIndex = 1;
             // 
             // txtTurno
             // 
-            this.txtTurno.Location = new System.Drawing.Point(910, 28);
+            this.txtTurno.BackColor = System.Drawing.Color.LightGray;
+            this.txtTurno.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTurno.Location = new System.Drawing.Point(410, 50);
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.ReadOnly = true;
-            this.txtTurno.Size = new System.Drawing.Size(100, 22);
+            this.txtTurno.Size = new System.Drawing.Size(100, 31);
             this.txtTurno.TabIndex = 2;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(104, 25);
+            this.txtFecha.BackColor = System.Drawing.Color.LightGray;
+            this.txtFecha.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFecha.Location = new System.Drawing.Point(117, 6);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
-            this.txtFecha.Size = new System.Drawing.Size(169, 22);
+            this.txtFecha.Size = new System.Drawing.Size(147, 31);
             this.txtFecha.TabIndex = 3;
             // 
             // txtVehiculo
             // 
-            this.txtVehiculo.Location = new System.Drawing.Point(401, 28);
+            this.txtVehiculo.BackColor = System.Drawing.Color.LightGray;
+            this.txtVehiculo.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehiculo.Location = new System.Drawing.Point(117, 54);
             this.txtVehiculo.Name = "txtVehiculo";
             this.txtVehiculo.ReadOnly = true;
-            this.txtVehiculo.Size = new System.Drawing.Size(135, 22);
+            this.txtVehiculo.Size = new System.Drawing.Size(147, 31);
             this.txtVehiculo.TabIndex = 4;
             // 
             // txtPiloto
             // 
-            this.txtPiloto.Location = new System.Drawing.Point(695, 123);
+            this.txtPiloto.BackColor = System.Drawing.Color.LightGray;
+            this.txtPiloto.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPiloto.Location = new System.Drawing.Point(164, 154);
             this.txtPiloto.Name = "txtPiloto";
             this.txtPiloto.ReadOnly = true;
-            this.txtPiloto.Size = new System.Drawing.Size(100, 22);
+            this.txtPiloto.Size = new System.Drawing.Size(100, 31);
             this.txtPiloto.TabIndex = 5;
+            this.txtPiloto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAyudante
             // 
-            this.txtAyudante.Location = new System.Drawing.Point(939, 123);
+            this.txtAyudante.BackColor = System.Drawing.Color.LightGray;
+            this.txtAyudante.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAyudante.Location = new System.Drawing.Point(164, 204);
             this.txtAyudante.Name = "txtAyudante";
             this.txtAyudante.ReadOnly = true;
-            this.txtAyudante.Size = new System.Drawing.Size(100, 22);
+            this.txtAyudante.Size = new System.Drawing.Size(100, 31);
             this.txtAyudante.TabIndex = 6;
+            this.txtAyudante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtViaticos
             // 
-            this.txtViaticos.Location = new System.Drawing.Point(939, 182);
+            this.txtViaticos.BackColor = System.Drawing.Color.LightGray;
+            this.txtViaticos.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtViaticos.Location = new System.Drawing.Point(164, 303);
             this.txtViaticos.Name = "txtViaticos";
             this.txtViaticos.ReadOnly = true;
-            this.txtViaticos.Size = new System.Drawing.Size(100, 22);
+            this.txtViaticos.Size = new System.Drawing.Size(100, 31);
             this.txtViaticos.TabIndex = 7;
+            this.txtViaticos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCombustible
             // 
-            this.txtCombustible.Location = new System.Drawing.Point(695, 182);
+            this.txtCombustible.BackColor = System.Drawing.Color.LightGray;
+            this.txtCombustible.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCombustible.Location = new System.Drawing.Point(164, 255);
             this.txtCombustible.Name = "txtCombustible";
             this.txtCombustible.ReadOnly = true;
-            this.txtCombustible.Size = new System.Drawing.Size(100, 22);
+            this.txtCombustible.Size = new System.Drawing.Size(100, 31);
             this.txtCombustible.TabIndex = 8;
+            this.txtCombustible.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtExtras
             // 
-            this.txtExtras.Location = new System.Drawing.Point(695, 255);
+            this.txtExtras.BackColor = System.Drawing.Color.LightGray;
+            this.txtExtras.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExtras.Location = new System.Drawing.Point(164, 359);
             this.txtExtras.Name = "txtExtras";
             this.txtExtras.ReadOnly = true;
-            this.txtExtras.Size = new System.Drawing.Size(100, 22);
+            this.txtExtras.Size = new System.Drawing.Size(100, 31);
             this.txtExtras.TabIndex = 9;
+            this.txtExtras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalEgresos
             // 
-            this.txtTotalEgresos.Location = new System.Drawing.Point(939, 255);
+            this.txtTotalEgresos.BackColor = System.Drawing.Color.LightGray;
+            this.txtTotalEgresos.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalEgresos.Location = new System.Drawing.Point(164, 413);
             this.txtTotalEgresos.Name = "txtTotalEgresos";
             this.txtTotalEgresos.ReadOnly = true;
-            this.txtTotalEgresos.Size = new System.Drawing.Size(100, 22);
+            this.txtTotalEgresos.Size = new System.Drawing.Size(100, 31);
             this.txtTotalEgresos.TabIndex = 10;
+            this.txtTotalEgresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTotalIngresos
             // 
-            this.txtTotalIngresos.Location = new System.Drawing.Point(150, 312);
+            this.txtTotalIngresos.BackColor = System.Drawing.Color.LightGray;
+            this.txtTotalIngresos.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalIngresos.Location = new System.Drawing.Point(164, 469);
             this.txtTotalIngresos.Name = "txtTotalIngresos";
             this.txtTotalIngresos.ReadOnly = true;
-            this.txtTotalIngresos.Size = new System.Drawing.Size(100, 22);
+            this.txtTotalIngresos.Size = new System.Drawing.Size(100, 31);
             this.txtTotalIngresos.TabIndex = 11;
+            this.txtTotalIngresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCapital
             // 
-            this.txtCapital.Location = new System.Drawing.Point(487, 315);
+            this.txtCapital.BackColor = System.Drawing.Color.LightGray;
+            this.txtCapital.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapital.Location = new System.Drawing.Point(553, 54);
             this.txtCapital.Name = "txtCapital";
             this.txtCapital.ReadOnly = true;
-            this.txtCapital.Size = new System.Drawing.Size(100, 22);
+            this.txtCapital.Size = new System.Drawing.Size(117, 31);
             this.txtCapital.TabIndex = 12;
+            this.txtCapital.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(708, 351);
+            this.txtComentario.BackColor = System.Drawing.Color.LightGray;
+            this.txtComentario.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentario.Location = new System.Drawing.Point(330, 413);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.ReadOnly = true;
-            this.txtComentario.Size = new System.Drawing.Size(267, 135);
+            this.txtComentario.Size = new System.Drawing.Size(340, 115);
             this.txtComentario.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 25);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 16);
+            this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "Fecha:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(315, 28);
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(82, 24);
             this.label2.TabIndex = 15;
             this.label2.Text = "Vehículo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(840, 31);
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(326, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 16);
+            this.label3.Size = new System.Drawing.Size(63, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "Turno:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(612, 34);
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(325, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(64, 24);
             this.label4.TabIndex = 17;
             this.label4.Text = "Viajes:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(243, 73);
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(448, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 16);
+            this.label5.Size = new System.Drawing.Size(81, 24);
             this.label5.TabIndex = 18;
             this.label5.Text = "Ingresos";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(827, 73);
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(103, 103);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 16);
+            this.label6.Size = new System.Drawing.Size(74, 24);
             this.label6.TabIndex = 19;
             this.label6.Text = "Egresos";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(597, 126);
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 154);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 16);
+            this.label7.Size = new System.Drawing.Size(103, 24);
             this.label7.TabIndex = 20;
             this.label7.Text = "Pago Piloto:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(820, 126);
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 16);
+            this.label8.Size = new System.Drawing.Size(133, 24);
             this.label8.TabIndex = 21;
             this.label8.Text = "Pago Ayudante:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(597, 185);
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(26, 262);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 16);
+            this.label9.Size = new System.Drawing.Size(112, 24);
             this.label9.TabIndex = 22;
             this.label9.Text = "Combustible:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(865, 182);
+            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(60, 310);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 16);
+            this.label10.Size = new System.Drawing.Size(78, 24);
             this.label10.TabIndex = 23;
             this.label10.Text = "Viaticos:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(630, 255);
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(69, 359);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 16);
+            this.label11.Size = new System.Drawing.Size(69, 24);
             this.label11.TabIndex = 24;
             this.label11.Text = "Extras:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(827, 255);
+            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 416);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 16);
+            this.label12.Size = new System.Drawing.Size(128, 24);
             this.label12.TabIndex = 25;
             this.label12.Text = "Total Egresos:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(795, 315);
+            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(448, 376);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 16);
+            this.label13.Size = new System.Drawing.Size(106, 24);
             this.label13.TabIndex = 26;
             this.label13.Text = "Comentario:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(32, 315);
+            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(8, 472);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(93, 16);
+            this.label14.Size = new System.Drawing.Size(130, 24);
             this.label14.TabIndex = 27;
             this.label14.Text = "TotalIngresos:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(416, 318);
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(576, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 16);
+            this.label15.Size = new System.Drawing.Size(69, 24);
             this.label15.TabIndex = 28;
             this.label15.Text = "Capital:";
             // 
@@ -317,7 +366,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 540);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(711, 540);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -347,7 +397,9 @@
             this.Controls.Add(this.txtTurno);
             this.Controls.Add(this.txtViajes);
             this.Controls.Add(this.datosRepDetalles);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "vReporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Reporte";
             this.Load += new System.EventHandler(this.vReporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datosRepDetalles)).EndInit();

@@ -37,6 +37,9 @@ namespace ProjectSGR
         {
             datosRep.DataSource = reporte.ListarReporte();
             datosRep.Columns["idReporte"].Visible = false;
+            datosRep.Columns["pagoPiloto"].Visible = false;
+            datosRep.Columns["pagoAyudante"].Visible = false;
+            datosRep.Columns["pagoCombustible"].Visible = false;
             datosRep.Columns["idVehiculo"].Visible = false;
             datosRep.Columns["pagoViaticos"].Visible = false;
             datosRep.Columns["pagoExtras"].Visible = false;
@@ -71,8 +74,7 @@ namespace ProjectSGR
                 // No se encontraron reportes con la fecha especificada, muestra un mensaje
                 MessageBox.Show("No se encontraron reportes con la fecha especificada.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MostrarDatos();
-                btnRegresar.Visible = true;
-                //MostrarDatos();
+                
             }
             else
             {
@@ -86,6 +88,7 @@ namespace ProjectSGR
             frmCrearReporte.Operacion = "Crear";
             frmCrearReporte.ShowDialog();
             MostrarDatos();
+            Console.WriteLine(Usuarios.idUsuario);
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
@@ -101,7 +104,7 @@ namespace ProjectSGR
                 
                 frm.txtViajes.Text = datosRep.CurrentRow.Cells["cantViajes"].Value.ToString();
                 frm.txtFecha.Text = ((DateTime)datosRep.CurrentRow.Cells["Fecha"].Value).ToString("dd/MM/yyyy");
-                frm.txtVehiculo.Text = datosRep.CurrentRow.Cells["Nombre"].Value.ToString();
+                frm.txtVehiculo.Text = datosRep.CurrentRow.Cells["nombre"].Value.ToString();
                 frm.txtTurno.Text = datosRep.CurrentRow.Cells["turno"].Value.ToString();
                 frm.txtPiloto.Text = datosRep.CurrentRow.Cells["pagoPiloto"].Value.ToString();
                 frm.txtAyudante.Text = datosRep.CurrentRow.Cells["pagoAyudante"].Value.ToString();
@@ -148,12 +151,7 @@ namespace ProjectSGR
                 frm.ListarVehi();
                 
                 frm.txtCantViajes.Text = datosRep.CurrentRow.Cells["cantViajes"].Value.ToString();
-                frm.cBoxVehiculo.Text = datosRep.CurrentRow.Cells["idVehiculo"].Value.ToString();
-                //frm.cBoxVehiculo.SelectedItem = datosRep.CurrentRow.Cells["idVehiculo"].Value;
-                int veri = Convert.ToInt32(datosRep.CurrentRow.Cells["idVehiculo"].Value.ToString());
-                
-                Console.WriteLine(datosRep.CurrentRow.Cells["idVehiculo"].Value);
-                //frm.cBoxVehiculo.DisplayMember = datosRep.CurrentRow.Cells["idVehiculo"].Value.ToString();
+                frm.cBoxVehiculo.SelectedValue = Convert.ToInt32(datosRep.CurrentRow.Cells["idVehiculo"].Value);
                 frm.datePick.Text = datosRep.CurrentRow.Cells["Fecha"].Value.ToString();
                 frm.nTurno.Text = datosRep.CurrentRow.Cells["turno"].Value.ToString();
                 frm.txtPiloto.Text = datosRep.CurrentRow.Cells["pagoPiloto"].Value.ToString();
@@ -178,7 +176,7 @@ namespace ProjectSGR
                     }
                     else
                     {
-                        // Si no hay suficientes filas en el DataTable, puedes asignar un valor predeterminado o dejar el TextBox en blanco.
+                        // Si no hay suficientes filas en el DataTable, se puede asignar un valor predeterminado o dejar el TextBox en blanco
                         frm.textBoxes[i].Text = "";
                     }
                 }
@@ -197,12 +195,25 @@ namespace ProjectSGR
         {
             if (datosRep.SelectedRows.Count > 0)
             {
-                
-                int ide = Convert.ToInt32(datosRep.CurrentRow.Cells[0].Value);
-                reporte.EliminarReporte(ide);
-                MessageBox.Show("Reporte eliminado correctamente");
-                MostrarDatos();
-                
+
+                DialogResult resultado = MessageBox.Show("¿Está seguro de que desea" +
+                    " eliminar este reporte?", "Confirmación de eliminación", 
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (resultado == DialogResult.OK)
+                {
+                    int ide = Convert.ToInt32(datosRep.CurrentRow.Cells[0].Value);
+                    reporte.EliminarReporte(ide);
+                    MessageBox.Show("Reporte eliminado exitosamente.", "Eliminado", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MostrarDatos();
+
+                }
+                else
+                {
+                    
+                }
+      
             }
             else
             {
@@ -212,9 +223,7 @@ namespace ProjectSGR
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            //datosRep.Visible = true;
-            MostrarDatos();
-            //btnRegresar.Visible = false;
+            this.Close();
         }
 
         private void datosRep_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

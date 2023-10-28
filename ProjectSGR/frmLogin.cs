@@ -40,7 +40,7 @@ namespace ProjectSGR
             {
                 MessageBox.Show("Usuario o Contraseña Incorrecta");
                 txtUser.Focus();
-                //Variables.logeado = 0;
+                
             }
 
             

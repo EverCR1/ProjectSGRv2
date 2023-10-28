@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datosRep = new System.Windows.Forms.DataGridView();
             this.btnBuscarReporte = new System.Windows.Forms.Button();
             this.datePickFecha = new System.Windows.Forms.DateTimePicker();
@@ -43,9 +44,13 @@
             this.btnRegresar = new System.Windows.Forms.Button();
             this.datosIng = new System.Windows.Forms.DataGridView();
             this.tbReporteTableAdapter1 = new ProjectSGR.bdSGRDataSetTableAdapters.tbReporteTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datosRep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbReporteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosIng)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // datosRep
@@ -59,7 +64,7 @@
             this.datosRep.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -67,87 +72,124 @@
             this.datosRep.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datosRep.ColumnHeadersHeight = 20;
             this.datosRep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datosRep.DefaultCellStyle = dataGridViewCellStyle2;
             this.datosRep.EnableHeadersVisualStyles = false;
             this.datosRep.GridColor = System.Drawing.Color.SteelBlue;
-            this.datosRep.Location = new System.Drawing.Point(27, 83);
+            this.datosRep.Location = new System.Drawing.Point(27, 90);
             this.datosRep.Name = "datosRep";
             this.datosRep.ReadOnly = true;
             this.datosRep.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datosRep.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.datosRep.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.datosRep.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datosRep.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.datosRep.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.datosRep.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datosRep.RowTemplate.Height = 24;
-            this.datosRep.Size = new System.Drawing.Size(1060, 324);
+            this.datosRep.Size = new System.Drawing.Size(919, 406);
             this.datosRep.TabIndex = 0;
             this.datosRep.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.datosRep_CellFormatting);
             // 
             // btnBuscarReporte
             // 
-            this.btnBuscarReporte.Location = new System.Drawing.Point(1097, 12);
+            this.btnBuscarReporte.BackColor = System.Drawing.Color.LightGray;
+            this.btnBuscarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnBuscarReporte.FlatAppearance.BorderSize = 0;
+            this.btnBuscarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarReporte.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarReporte.Location = new System.Drawing.Point(49, 90);
             this.btnBuscarReporte.Name = "btnBuscarReporte";
-            this.btnBuscarReporte.Size = new System.Drawing.Size(156, 40);
+            this.btnBuscarReporte.Size = new System.Drawing.Size(182, 44);
             this.btnBuscarReporte.TabIndex = 1;
             this.btnBuscarReporte.Text = "Buscar";
-            this.btnBuscarReporte.UseVisualStyleBackColor = true;
+            this.btnBuscarReporte.UseVisualStyleBackColor = false;
             this.btnBuscarReporte.Click += new System.EventHandler(this.btnBuscarReporte_Click);
             // 
             // datePickFecha
             // 
-            this.datePickFecha.Location = new System.Drawing.Point(838, 19);
+            this.datePickFecha.CalendarFont = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickFecha.CalendarMonthBackground = System.Drawing.Color.LightGray;
+            this.datePickFecha.CalendarTitleBackColor = System.Drawing.Color.LightGray;
+            this.datePickFecha.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePickFecha.Location = new System.Drawing.Point(14, 38);
             this.datePickFecha.Name = "datePickFecha";
-            this.datePickFecha.Size = new System.Drawing.Size(217, 22);
+            this.datePickFecha.Size = new System.Drawing.Size(253, 26);
             this.datePickFecha.TabIndex = 2;
             // 
             // btnEliminarReporte
             // 
-            this.btnEliminarReporte.Location = new System.Drawing.Point(1129, 377);
+            this.btnEliminarReporte.BackColor = System.Drawing.Color.LightGray;
+            this.btnEliminarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnEliminarReporte.FlatAppearance.BorderSize = 0;
+            this.btnEliminarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarReporte.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarReporte.Location = new System.Drawing.Point(49, 451);
             this.btnEliminarReporte.Name = "btnEliminarReporte";
-            this.btnEliminarReporte.Size = new System.Drawing.Size(111, 30);
+            this.btnEliminarReporte.Size = new System.Drawing.Size(182, 45);
             this.btnEliminarReporte.TabIndex = 3;
             this.btnEliminarReporte.Text = "Eliminar";
-            this.btnEliminarReporte.UseVisualStyleBackColor = true;
+            this.btnEliminarReporte.UseVisualStyleBackColor = false;
             this.btnEliminarReporte.Click += new System.EventHandler(this.btnEliminarReporte_Click);
             // 
             // btnEditarReporte
             // 
-            this.btnEditarReporte.Location = new System.Drawing.Point(1129, 271);
+            this.btnEditarReporte.BackColor = System.Drawing.Color.LightGray;
+            this.btnEditarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnEditarReporte.FlatAppearance.BorderSize = 0;
+            this.btnEditarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarReporte.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarReporte.Location = new System.Drawing.Point(49, 359);
             this.btnEditarReporte.Name = "btnEditarReporte";
-            this.btnEditarReporte.Size = new System.Drawing.Size(111, 37);
+            this.btnEditarReporte.Size = new System.Drawing.Size(182, 45);
             this.btnEditarReporte.TabIndex = 4;
             this.btnEditarReporte.Text = "Editar";
-            this.btnEditarReporte.UseVisualStyleBackColor = true;
+            this.btnEditarReporte.UseVisualStyleBackColor = false;
             this.btnEditarReporte.Click += new System.EventHandler(this.btnEditarReporte_Click);
             // 
             // btnCrearRep
             // 
-            this.btnCrearRep.Location = new System.Drawing.Point(1129, 83);
+            this.btnCrearRep.BackColor = System.Drawing.Color.LightGray;
+            this.btnCrearRep.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnCrearRep.FlatAppearance.BorderSize = 0;
+            this.btnCrearRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearRep.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearRep.Location = new System.Drawing.Point(49, 181);
             this.btnCrearRep.Name = "btnCrearRep";
-            this.btnCrearRep.Size = new System.Drawing.Size(111, 38);
+            this.btnCrearRep.Size = new System.Drawing.Size(182, 44);
             this.btnCrearRep.TabIndex = 5;
             this.btnCrearRep.Text = "Crear";
-            this.btnCrearRep.UseVisualStyleBackColor = true;
+            this.btnCrearRep.UseVisualStyleBackColor = false;
             this.btnCrearRep.Click += new System.EventHandler(this.btnCrearRep_Click);
             // 
             // btnDetalles
             // 
-            this.btnDetalles.Location = new System.Drawing.Point(1129, 184);
+            this.btnDetalles.BackColor = System.Drawing.Color.LightGray;
+            this.btnDetalles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnDetalles.FlatAppearance.BorderSize = 0;
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalles.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalles.Location = new System.Drawing.Point(49, 271);
             this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(111, 36);
+            this.btnDetalles.Size = new System.Drawing.Size(182, 45);
             this.btnDetalles.TabIndex = 6;
             this.btnDetalles.Text = "Ver Detalles";
-            this.btnDetalles.UseVisualStyleBackColor = true;
+            this.btnDetalles.UseVisualStyleBackColor = false;
             this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // tbReporteBindingSource
@@ -156,19 +198,22 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(27, 19);
+            this.btnRegresar.BackColor = System.Drawing.Color.LightGray;
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Location = new System.Drawing.Point(27, 27);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(121, 34);
+            this.btnRegresar.Size = new System.Drawing.Size(159, 45);
             this.btnRegresar.TabIndex = 7;
             this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Visible = false;
+            this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // datosIng
             // 
             this.datosIng.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datosIng.Location = new System.Drawing.Point(762, 440);
+            this.datosIng.Location = new System.Drawing.Point(811, 16);
             this.datosIng.Name = "datosIng";
             this.datosIng.RowHeadersWidth = 51;
             this.datosIng.RowTemplate.Height = 24;
@@ -180,27 +225,65 @@
             // 
             this.tbReporteTableAdapter1.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnCrearRep);
+            this.panel1.Controls.Add(this.btnDetalles);
+            this.panel1.Controls.Add(this.btnEditarReporte);
+            this.panel1.Controls.Add(this.datePickFecha);
+            this.panel1.Controls.Add(this.btnEliminarReporte);
+            this.panel1.Controls.Add(this.btnBuscarReporte);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(976, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(279, 510);
+            this.panel1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(155, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fecha para buscar";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(211, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(553, 56);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Administración de Reportes";
+            // 
             // frmVerReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 563);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
+            this.ClientSize = new System.Drawing.Size(1255, 510);
+            this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.datosIng);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnDetalles);
-            this.Controls.Add(this.btnCrearRep);
-            this.Controls.Add(this.btnEditarReporte);
-            this.Controls.Add(this.btnEliminarReporte);
-            this.Controls.Add(this.datePickFecha);
-            this.Controls.Add(this.btnBuscarReporte);
             this.Controls.Add(this.datosRep);
             this.Name = "frmVerReporte";
-            this.Text = "frmVerReporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmVerReporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datosRep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbReporteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datosIng)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -220,5 +303,8 @@
         private bdSGRDataSet bdSGRDataSet2;
         private bdSGRDataSetTableAdapters.tbReporteTableAdapter tbReporteTableAdapter1;
         public System.Windows.Forms.DataGridView datosRep;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
