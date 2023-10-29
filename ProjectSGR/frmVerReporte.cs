@@ -96,7 +96,7 @@ namespace ProjectSGR
             if (datosRep.SelectedRows.Count > 0)
             {
                 vReporte frm = new vReporte();
-                //frm.Operacion = "Editar";
+                
                 int ide = Convert.ToInt32(datosRep.CurrentRow.Cells[0].Value);
                 obtenerIngresos(ide);
                 

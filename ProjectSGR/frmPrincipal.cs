@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
+using ProjectSGR.bdSGRDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace ProjectSGR
 {
     public partial class frmPrincipal : Form
     {
 
-        Usuarios usuario = new Usuarios();
+        QueriesTableAdapter adapter = new QueriesTableAdapter();
         public frmPrincipal()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace ProjectSGR
 
         private void frmPrincipal_Activated(object sender, EventArgs e)
         {
-
+            AdminPermisos();
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -95,6 +98,27 @@ namespace ProjectSGR
         {
             DateTime horaActual = DateTime.Now;
             labelHora.Text = horaActual.ToString(); //"HH:mm:ss"
+        }
+
+        private void AdminPermisos()
+        {
+            int permiso = (int)adapter.FPermisos(Usuarios.idUsuario);
+
+            if (permiso == 2 || permiso == 3)
+            {
+                vehículosToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+                impresionesToolStripMenuItem.Visible = false;
+                editarReporteToolStripMenuItem.Visible = false;
+            }
+
+            else
+            {
+                vehículosToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+                impresionesToolStripMenuItem.Visible = true;
+                editarReporteToolStripMenuItem.Visible = true;
+            }
         }
     }
 }

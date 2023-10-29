@@ -57,6 +57,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datosRepDetalles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // 
             this.txtViajes.BackColor = System.Drawing.Color.LightGray;
             this.txtViajes.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtViajes.Location = new System.Drawing.Point(410, 2);
+            this.txtViajes.Location = new System.Drawing.Point(372, 2);
             this.txtViajes.Name = "txtViajes";
             this.txtViajes.ReadOnly = true;
             this.txtViajes.Size = new System.Drawing.Size(100, 31);
@@ -87,7 +88,7 @@
             // 
             this.txtTurno.BackColor = System.Drawing.Color.LightGray;
             this.txtTurno.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTurno.Location = new System.Drawing.Point(410, 50);
+            this.txtTurno.Location = new System.Drawing.Point(372, 50);
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.ReadOnly = true;
             this.txtTurno.Size = new System.Drawing.Size(100, 31);
@@ -194,7 +195,7 @@
             // 
             this.txtCapital.BackColor = System.Drawing.Color.LightGray;
             this.txtCapital.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapital.Location = new System.Drawing.Point(553, 54);
+            this.txtCapital.Location = new System.Drawing.Point(582, 9);
             this.txtCapital.Name = "txtCapital";
             this.txtCapital.ReadOnly = true;
             this.txtCapital.Size = new System.Drawing.Size(117, 31);
@@ -236,7 +237,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 54);
+            this.label3.Location = new System.Drawing.Point(288, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 24);
             this.label3.TabIndex = 16;
@@ -246,7 +247,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(325, 9);
+            this.label4.Location = new System.Drawing.Point(287, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 24);
             this.label4.TabIndex = 17;
@@ -356,11 +357,25 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(576, 9);
+            this.label15.Location = new System.Drawing.Point(485, 13);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 24);
             this.label15.TabIndex = 28;
             this.label15.Text = "Capital:";
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.BackColor = System.Drawing.Color.LightGray;
+            this.btnPdf.FlatAppearance.BorderSize = 0;
+            this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPdf.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.Location = new System.Drawing.Point(558, 53);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(141, 32);
+            this.btnPdf.TabIndex = 29;
+            this.btnPdf.Text = "Generar pdf";
+            this.btnPdf.UseVisualStyleBackColor = false;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
             // vReporte
             // 
@@ -368,6 +383,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(711, 540);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -439,5 +455,6 @@
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.DataGridView datosRepDetalles;
+        private System.Windows.Forms.Button btnPdf;
     }
 }

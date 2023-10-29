@@ -20,7 +20,7 @@
     <Shape ID="DesignTable:pResumenReporte" ZOrder="4" X="4800" Y="70" Height="296" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:pListarIngresos" ZOrder="3" X="4127" Y="95" Height="135" Width="276" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:ListarVehiculos" ZOrder="1" X="5169" Y="70" Height="112" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="54" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="2" X="3263" Y="75" Height="240" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="213" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="2" X="3263" Y="75" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="236" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__tbPiloto__idUsua__2A4B4B5E" ZOrder="14" LineWidth="11">
