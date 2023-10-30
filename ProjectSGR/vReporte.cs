@@ -128,8 +128,15 @@ namespace ProjectSGR
 
                     Paragraph capital = new Paragraph("Capital: " + txtCapital.Text);
                     capital.Alignment = Element.ALIGN_CENTER;
-                    capital.SpacingAfter = 10f;
+                    capital.SpacingAfter = 30f;
                     doc.Add(capital);
+
+                    Paragraph comentario = new Paragraph();
+                    comentario.Alignment = Element.ALIGN_JUSTIFIED;
+                    comentario.Add("Comentario: \n");
+                    comentario.Add(txtComentario.Text);
+                    comentario.SpacingAfter = 5f;
+                    doc.Add(comentario);
                     
 
                     // Cierra el documento

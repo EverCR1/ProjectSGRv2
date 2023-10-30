@@ -146,7 +146,6 @@
             // 
             this.btnCrear.BackColor = System.Drawing.Color.LightGray;
             this.btnCrear.FlatAppearance.BorderSize = 0;
-            this.btnCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Location = new System.Drawing.Point(147, 413);
             this.btnCrear.Name = "btnCrear";
@@ -160,7 +159,6 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Location = new System.Drawing.Point(409, 413);
             this.btnCancelar.Name = "btnCancelar";
@@ -450,6 +448,8 @@
             this.Controls.Add(this.btnAddViajes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCantViajes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCrearReporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte";

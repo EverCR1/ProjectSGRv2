@@ -88,8 +88,8 @@ namespace ProjectSGR
         private void MostrarDesarrolladores()
         {
             string EOM = "Desarrollado por: Ever Corazón, Olsend Luna, Mónica Caal\n"+
-                         "Contacto: \n"+
-                         "Repositorio del proyecto: \n";
+                         "Contacto: eom2023@gmail.com \n"+
+                         "Repositorio del proyecto: https://github.com/EverCR1/ProjectSGRv2.git ";
 
             MessageBox.Show(EOM, "Acerca de los Desarrolladores", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -111,6 +111,7 @@ namespace ProjectSGR
                 usuariosToolStripMenuItem.Visible = false;
                 respaldoToolStripMenuItem.Visible = false;
                 editarReporteToolStripMenuItem.Visible = false;
+                respaldoToolStripMenuItem.Visible = false;
             }
 
             else
@@ -119,6 +120,7 @@ namespace ProjectSGR
                 usuariosToolStripMenuItem.Visible = true;
                 respaldoToolStripMenuItem.Visible = true;
                 editarReporteToolStripMenuItem.Visible = true;
+                respaldoToolStripMenuItem.Visible = true;
             }
         }
 
