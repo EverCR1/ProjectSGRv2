@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datosRepDetalles = new System.Windows.Forms.DataGridView();
             this.txtViajes = new System.Windows.Forms.TextBox();
             this.txtTurno = new System.Windows.Forms.TextBox();
@@ -65,13 +69,53 @@
             // 
             this.datosRepDetalles.AllowUserToAddRows = false;
             this.datosRepDetalles.AllowUserToDeleteRows = false;
-            this.datosRepDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datosRepDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.datosRepDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.datosRepDetalles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.datosRepDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datosRepDetalles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datosRepDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.datosRepDetalles.ColumnHeadersHeight = 25;
+            this.datosRepDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datosRepDetalles.DefaultCellStyle = dataGridViewCellStyle6;
+            this.datosRepDetalles.EnableHeadersVisualStyles = false;
+            this.datosRepDetalles.GridColor = System.Drawing.Color.SteelBlue;
             this.datosRepDetalles.Location = new System.Drawing.Point(330, 135);
             this.datosRepDetalles.Name = "datosRepDetalles";
             this.datosRepDetalles.ReadOnly = true;
+            this.datosRepDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datosRepDetalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.datosRepDetalles.RowHeadersVisible = false;
             this.datosRepDetalles.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.datosRepDetalles.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.datosRepDetalles.RowTemplate.Height = 24;
-            this.datosRepDetalles.Size = new System.Drawing.Size(340, 227);
+            this.datosRepDetalles.Size = new System.Drawing.Size(340, 270);
             this.datosRepDetalles.TabIndex = 0;
             // 
             // txtViajes
@@ -195,7 +239,7 @@
             // 
             this.txtCapital.BackColor = System.Drawing.Color.LightGray;
             this.txtCapital.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapital.Location = new System.Drawing.Point(582, 9);
+            this.txtCapital.Location = new System.Drawing.Point(553, 47);
             this.txtCapital.Name = "txtCapital";
             this.txtCapital.ReadOnly = true;
             this.txtCapital.Size = new System.Drawing.Size(117, 31);
@@ -206,11 +250,11 @@
             // 
             this.txtComentario.BackColor = System.Drawing.Color.LightGray;
             this.txtComentario.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComentario.Location = new System.Drawing.Point(330, 413);
+            this.txtComentario.Location = new System.Drawing.Point(330, 435);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.ReadOnly = true;
-            this.txtComentario.Size = new System.Drawing.Size(340, 115);
+            this.txtComentario.Size = new System.Drawing.Size(340, 120);
             this.txtComentario.TabIndex = 13;
             // 
             // label1
@@ -337,7 +381,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(448, 376);
+            this.label13.Location = new System.Drawing.Point(448, 408);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 24);
             this.label13.TabIndex = 26;
@@ -357,7 +401,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(485, 13);
+            this.label15.Location = new System.Drawing.Point(575, 6);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 24);
             this.label15.TabIndex = 28;
@@ -369,11 +413,11 @@
             this.btnPdf.FlatAppearance.BorderSize = 0;
             this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPdf.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPdf.Location = new System.Drawing.Point(558, 53);
+            this.btnPdf.Location = new System.Drawing.Point(14, 523);
             this.btnPdf.Name = "btnPdf";
-            this.btnPdf.Size = new System.Drawing.Size(141, 32);
+            this.btnPdf.Size = new System.Drawing.Size(250, 32);
             this.btnPdf.TabIndex = 29;
-            this.btnPdf.Text = "Generar pdf";
+            this.btnPdf.Text = "Imprimir Reporte";
             this.btnPdf.UseVisualStyleBackColor = false;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
@@ -382,7 +426,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(711, 540);
+            this.ClientSize = new System.Drawing.Size(711, 564);
             this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -414,6 +458,7 @@
             this.Controls.Add(this.txtViajes);
             this.Controls.Add(this.datosRepDetalles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "vReporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Reporte";

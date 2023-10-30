@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.IO;
 
 namespace ProjectSGR
 {
@@ -108,7 +109,7 @@ namespace ProjectSGR
             {
                 vehículosToolStripMenuItem.Visible = false;
                 usuariosToolStripMenuItem.Visible = false;
-                impresionesToolStripMenuItem.Visible = false;
+                respaldoToolStripMenuItem.Visible = false;
                 editarReporteToolStripMenuItem.Visible = false;
             }
 
@@ -116,8 +117,32 @@ namespace ProjectSGR
             {
                 vehículosToolStripMenuItem.Visible = true;
                 usuariosToolStripMenuItem.Visible = true;
-                impresionesToolStripMenuItem.Visible = true;
+                respaldoToolStripMenuItem.Visible = true;
                 editarReporteToolStripMenuItem.Visible = true;
+            }
+        }
+
+        private void realizarCopiaDeSeguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Abre el cuadro de diálogo para que el usuario elija la ubicación y el nombre del archivo
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Archivos de copia de seguridad de SQL Server|*.bak";
+            saveFileDialog1.Title = "Guardar archivo de copia de seguridad de SQL Server";
+            saveFileDialog1.ShowDialog();
+
+            // Si el usuario no cancela el diálogo y elige una ubicación
+            if (saveFileDialog1.FileName != "")
+            {
+                string filePath = saveFileDialog1.FileName;
+
+                try
+                {
+                    adapter.pCopiaSeguridad(filePath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar la copia de seguridad: " + ex.Message);
+                }
             }
         }
     }
