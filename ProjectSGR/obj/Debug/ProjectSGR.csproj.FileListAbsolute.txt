@@ -46,3 +46,5 @@ C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCambiarContraseña.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmDetallesUsuario.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmVerUsuario.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEstadisticaV.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEstadisticaIn.resources

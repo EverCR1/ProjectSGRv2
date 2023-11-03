@@ -16,7 +16,7 @@ namespace ProjectSGR
         Usuarios usuario = new Usuarios();
         detallesPilotoTableAdapter detalleP = new detallesPilotoTableAdapter();
         detallesUsuarioTableAdapter detalleU = new detallesUsuarioTableAdapter();
-
+        
         public frmVerUsuario()
         {
             InitializeComponent();

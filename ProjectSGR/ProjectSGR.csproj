@@ -60,6 +60,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +100,18 @@
     </Compile>
     <Compile Include="frmDetallesUsuario.designer.cs">
       <DependentUpon>frmDetallesUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadisticaIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadisticaIn.Designer.cs">
+      <DependentUpon>frmEstadisticaIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstadisticaV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstadisticaV.Designer.cs">
+      <DependentUpon>frmEstadisticaV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -150,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetallesUsuario.resx">
       <DependentUpon>frmDetallesUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadisticaIn.resx">
+      <DependentUpon>frmEstadisticaIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstadisticaV.resx">
+      <DependentUpon>frmEstadisticaV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

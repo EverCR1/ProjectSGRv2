@@ -51,8 +51,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.estadísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bdSGRDataSet = new ProjectSGR.bdSGRDataSet();
             this.bdSGRDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehículoMásUsadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viajesPorDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdSGRDataSet)).BeginInit();
@@ -71,7 +74,8 @@
             this.vehículosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.respaldoToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
+            this.acercaDeToolStripMenuItem,
+            this.estadísticaToolStripMenuItem});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -250,6 +254,15 @@
             this.timerHora.Interval = 1000;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // estadísticaToolStripMenuItem
+            // 
+            this.estadísticaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vehículoMásUsadoToolStripMenuItem,
+            this.viajesPorDíaToolStripMenuItem});
+            this.estadísticaToolStripMenuItem.Name = "estadísticaToolStripMenuItem";
+            this.estadísticaToolStripMenuItem.Size = new System.Drawing.Size(143, 35);
+            this.estadísticaToolStripMenuItem.Text = "Estadística";
+            // 
             // bdSGRDataSet
             // 
             this.bdSGRDataSet.DataSetName = "bdSGRDataSet";
@@ -259,6 +272,20 @@
             // 
             this.bdSGRDataSetBindingSource.DataSource = this.bdSGRDataSet;
             this.bdSGRDataSetBindingSource.Position = 0;
+            // 
+            // vehículoMásUsadoToolStripMenuItem
+            // 
+            this.vehículoMásUsadoToolStripMenuItem.Name = "vehículoMásUsadoToolStripMenuItem";
+            this.vehículoMásUsadoToolStripMenuItem.Size = new System.Drawing.Size(307, 36);
+            this.vehículoMásUsadoToolStripMenuItem.Text = "Vehículo más usado";
+            this.vehículoMásUsadoToolStripMenuItem.Click += new System.EventHandler(this.vehículoMásUsadoToolStripMenuItem_Click);
+            // 
+            // viajesPorDíaToolStripMenuItem
+            // 
+            this.viajesPorDíaToolStripMenuItem.Name = "viajesPorDíaToolStripMenuItem";
+            this.viajesPorDíaToolStripMenuItem.Size = new System.Drawing.Size(307, 36);
+            this.viajesPorDíaToolStripMenuItem.Text = "Viajes por día";
+            this.viajesPorDíaToolStripMenuItem.Click += new System.EventHandler(this.viajesPorDíaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -321,6 +348,9 @@
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Timer timerHora;
         private System.Windows.Forms.ToolStripMenuItem realizarCopiaDeSeguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estadísticaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vehículoMásUsadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viajesPorDíaToolStripMenuItem;
     }
 }
 

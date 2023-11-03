@@ -45,7 +45,8 @@ namespace ProjectSGR
             datosRep.Columns["Extras"].Visible = false;
             datosRep.Columns["Comentario"].Visible = false;
             datosRep.Columns["idUsuario"].Visible = false;
-            datosRep.Columns["Vehículo"].Visible = false;
+            datosRep.Columns["Viajes"].Visible = false;
+            //datosRep.Columns["Vehículo"].Visible = false;
 
             TotalReportes();
         }

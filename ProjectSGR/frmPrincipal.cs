@@ -202,5 +202,17 @@ namespace ProjectSGR
                 frm.ShowDialog();
             }
         }
+
+        private void vehículoMásUsadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaV frmEstadistica = new frmEstadisticaV();
+            frmEstadistica.ShowDialog();
+        }
+
+        private void viajesPorDíaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaIn frmEstadisticaIn = new frmEstadisticaIn();
+            frmEstadisticaIn.ShowDialog();
+        }
     }
 }
