@@ -1,4 +1,5 @@
 
+
 use bdSGR;
 
 --Función para el Login
@@ -24,6 +25,17 @@ end
 
 select dbo.FPermisos(5);
 select dbo.FLogin('ever8','passever');
+select dbo.fTotalReportes();
+--Función para obtener total Reportes
+create function fTotalReportes()
+returns int
+as begin
+	DECLARE @TotalReportes INT;
+    
+    SELECT @TotalReportes = COUNT(*) FROM tbReporte;
+    
+    RETURN @TotalReportes;
+end
 
 --- Procedimiento para el Registro (Ejemplo)
 CREATE PROCEDURE FRegistro(@Usuario varchar(100), @Pass varchar(max), @idPer int)
@@ -247,6 +259,57 @@ END;
 
 exec pListarReporte
 
+--Vista para los reportes
+CREATE VIEW vReporte AS
+SELECT
+    R.idReporte,
+    R.idVehiculo,
+    V.nombre [Vehículo],
+    R.fecha [Fecha],
+    R.cantViajes [Viajes],
+    R.turno [Turno],
+    R.PagoPiloto [Pago Piloto],
+    R.PagoAyudante [Pago Ayudante],
+    R.PagoCombustible [Combustible],
+    R.PagoViaticos [Viáticos],
+    R.PagoExtras [Extras],
+    R.TotalIngresos [Total Ingresos],
+    R.TotalEgresos [Total Egresos],
+    R.Capital [Capital],
+    R.Comentario [Comentario],
+    R.idUsuario
+FROM
+    tbReporte R
+INNER JOIN
+    tbVehiculo V ON R.idVehiculo = V.idVehiculo
+
+--Añadirle order by a la Vista
+CREATE PROCEDURE listarReporte
+AS BEGIN
+	select * from vReporte order by Fecha desc
+END
+
+exec listarReporte
+
+--Buscar Reporte
+CREATE PROCEDURE buscarReporte
+@fechaInicio date, @fechaFinal date
+AS BEGIN
+	select * from vReporte where Fecha between @fechaInicio and @fechaFinal
+	order by Fecha desc
+END
+
+--Vista Para Ingresos
+CREATE VIEW vIngresos
+AS
+SELECT 
+    V.nombre [Viaje], R.Ingreso AS [Ingreso], R.idReporte
+FROM tbReportexVuelta AS R
+INNER JOIN 
+tbVuelta AS V ON R.idVuelta = V.idVuelta;
+
+
+
 --Procedimiento para crear usuarios
 CREATE PROCEDURE pCrearUsuario(@DPI bigint, @nombres varchar(75), @apellidos varchar(75), 
 @username varchar(50),@pass varchar(max),@fechaNac date, @idCargo int)
@@ -268,12 +331,9 @@ BEGIN
         BEGIN TRANSACTION;
 
         --Consulta SELECT con JOIN para obtener datos de ambas tablas
-        SELECT 
-            V.nombre as Viaje , R.Ingreso as Ingreso
-        FROM tbReportexVuelta as R inner join tbVuelta as V on R.idVuelta = V.idVuelta
+        SELECT * from vIngresos
 		where idReporte = @ideRep;
 
-        
         COMMIT;
     END TRY
     BEGIN CATCH
@@ -338,7 +398,7 @@ END;
 
 select * from tbUsuario
 select * from tbPiloto
-
+select * from tbReporte order by fecha desc
 
 --Script para la copia de seguridad desde la App
 create procedure pCopiaSeguridad
@@ -357,3 +417,13 @@ set @destino = 'C:\CopiasSQL\COPIA_'+CONCAT(DATEPART(SECOND,GETDATE()),'_',
 DATEPART(MINUTE,GETDATE()))+'.bak'
 backup database [bdSGR] to disk = @destino
 go
+
+select * from tbUsuario;
+
+
+RESTORE DATABASE bdSGR
+FROM DISK = 'C:\CopiasSQL\COPIA_43_15.bak'
+WITH REPLACE;
+
+RESTORE DATABASE CopiaPrueba
+FROM DISK = 'C:\CopiasSQL\COPIA_43_15.bak';
