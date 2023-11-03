@@ -20,6 +20,7 @@ namespace ProjectSGR
         public List<System.Windows.Forms.TextBox> textBoxes = new List<System.Windows.Forms.TextBox>();
         public List<decimal> listaInge = new List<decimal>();
         Reporte reporte = new Reporte();
+        frmVerReporte ver = new frmVerReporte();
 
         //Variables de control
         public bool controlI = false;
@@ -242,6 +243,8 @@ namespace ProjectSGR
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+
+            
             //int ide = frmVerReporte.idRepor;
             if (Operacion == "Crear")
             {
@@ -297,13 +300,14 @@ namespace ProjectSGR
                     reporte.PagoAyudante = int.Parse(txtAyudante.Text);
                     reporte.PagoCombustible = int.Parse(txtCombustible.Text);
                     reporte.PagoViaticos = int.Parse(txtViaticos.Text);
-                    reporte.PagoExtras = decimal.Parse(txtExtras.Text);
+                    //reporte.PagoExtras = decimal.Parse(txtExtras.Text);
                     reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
                     reporte.TotalEgresos = decimal.Parse(txtTotalEgresos.Text);
                     reporte.Capital = decimal.Parse(txtCapital.Text);
-                    reporte.Comentario = txtComentario.Text;
+                    //reporte.Comentario = txtComentario.Text;
                     reporte.IdUsuario = Usuarios.idUsuario;
                     reporte.Listado = listaInge;
+                    Adicion();
 
                     reporte.CrearReporte();
                     MessageBox.Show("Reporte creado exitosamente");
@@ -366,14 +370,14 @@ namespace ProjectSGR
                     reporte.PagoAyudante = int.Parse(txtAyudante.Text);
                     reporte.PagoCombustible = int.Parse(txtCombustible.Text);
                     reporte.PagoViaticos = int.Parse(txtViaticos.Text);
-                    reporte.PagoExtras = decimal.Parse(txtExtras.Text);
+                    //reporte.PagoExtras = decimal.Parse(txtExtras.Text);
                     reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
                     reporte.TotalEgresos = decimal.Parse(txtTotalEgresos.Text);
                     reporte.Capital = decimal.Parse(txtCapital.Text);
-                    reporte.Comentario = txtComentario.Text;
+                    //reporte.Comentario = txtComentario.Text;
                     reporte.IdUsuario = Usuarios.idUsuario;
                     reporte.Listado = listaInge;
-
+                    Adicion();
                     
                     Console.WriteLine(idd);
                     reporte.EditarReporte(idd);
@@ -381,7 +385,7 @@ namespace ProjectSGR
                     Operacion = "Crear";
                     MessageBox.Show("Reporte actualizado exitosamente");
                     this.Close();
-                    //ListarVehi();
+                    
                 }
 
             }
@@ -479,7 +483,7 @@ namespace ProjectSGR
                 !string.IsNullOrWhiteSpace(txtAyudante.Text) &&
                 !string.IsNullOrWhiteSpace(txtCombustible.Text) &&
                 !string.IsNullOrWhiteSpace(txtViaticos.Text) &&
-                !string.IsNullOrWhiteSpace(txtExtras.Text) &&
+                //!string.IsNullOrWhiteSpace(txtExtras.Text) &&
                 !string.IsNullOrWhiteSpace(txtCantViajes.Text)
             )
             {
@@ -489,6 +493,31 @@ namespace ProjectSGR
             else
             {
                 return false;
+            }
+        }
+
+        private void Adicion()
+        {
+            decimal valorExtras = 0;
+            string comentario = "SC";
+
+            if (!string.IsNullOrWhiteSpace(txtExtras.Text) && decimal.TryParse(txtExtras.Text, out decimal extras))
+            {
+                reporte.PagoExtras = extras; // Asigna el valor ingresado por el usuario
+            }
+            else
+            {
+                reporte.PagoExtras = valorExtras;
+            }
+
+            // Verifica si el campo Comentario no está en blanco
+            if (!string.IsNullOrWhiteSpace(txtComentario.Text))
+            {
+                reporte.Comentario = txtComentario.Text; // Asigna el valor ingresado por el usuario
+            }
+            else
+            {
+                reporte.Comentario = comentario;
             }
         }
 

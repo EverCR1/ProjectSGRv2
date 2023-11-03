@@ -31,9 +31,9 @@ namespace ProjectSGR
         public List<decimal> Listado = new List<decimal>();
 
         QueriesTableAdapter adapter = new QueriesTableAdapter();
-        pResumenReporteTableAdapter ResumenReporte = new pResumenReporteTableAdapter();
-        pBuscarReporteTableAdapter buscarReporte = new pBuscarReporteTableAdapter();
-        pListarReporteTableAdapter listarReporte = new pListarReporteTableAdapter();
+        
+        buscarReporteTableAdapter buscarReporte = new buscarReporteTableAdapter();
+        listarReporteTableAdapter listarReporte = new listarReporteTableAdapter();
         pListarIngresosTableAdapter listarIngreso = new pListarIngresosTableAdapter();
         ListarVehiculosTableAdapter listaVe = new ListarVehiculosTableAdapter();
         //Método para crear reportes
@@ -150,10 +150,10 @@ namespace ProjectSGR
         }
 
         //Método para Buscar Reportes
-        public DataTable BuscarReporte(DateTime fecha)
+        public DataTable BuscarReporte(DateTime fechaInicio, DateTime fechaFinal)
         {
             DataTable dataTable = new DataTable();
-            dataTable = buscarReporte.GetData(fecha);
+            dataTable = buscarReporte.GetData(fechaInicio, fechaFinal);
             return dataTable;
         }
     }

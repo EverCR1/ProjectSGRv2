@@ -18,7 +18,7 @@ namespace ProjectSGR
 
         Reporte reporte = new Reporte();
         pListarIngresosTableAdapter listaIngresos = new pListarIngresosTableAdapter();
-        
+        QueriesTableAdapter adapter = new QueriesTableAdapter();
         
         public frmVerReporte()
         {
@@ -30,43 +30,58 @@ namespace ProjectSGR
             // TODO: esta línea de código carga datos en la tabla 'bdSGRDataSet.tbReporte' Puede moverla o quitarla según sea necesario.
             //this.tbReporteTableAdapter.Fill(this.bdSGRDataSet.tbReporte);
             MostrarDatos();
-
+            
         }
 
-        private void MostrarDatos()
+        public void MostrarDatos()
         {
             datosRep.DataSource = reporte.ListarReporte();
             datosRep.Columns["idReporte"].Visible = false;
-            datosRep.Columns["pagoPiloto"].Visible = false;
-            datosRep.Columns["pagoAyudante"].Visible = false;
-            datosRep.Columns["pagoCombustible"].Visible = false;
+            datosRep.Columns["Pago Piloto"].Visible = false;
+            datosRep.Columns["Pago Ayudante"].Visible = false;
+            datosRep.Columns["Combustible"].Visible = false;
             datosRep.Columns["idVehiculo"].Visible = false;
-            datosRep.Columns["pagoViaticos"].Visible = false;
-            datosRep.Columns["pagoExtras"].Visible = false;
-            datosRep.Columns["comentario"].Visible = false;
+            datosRep.Columns["Viáticos"].Visible = false;
+            datosRep.Columns["Extras"].Visible = false;
+            datosRep.Columns["Comentario"].Visible = false;
             datosRep.Columns["idUsuario"].Visible = false;
-            datosRep.Columns["nombre"].Visible = false;
+            datosRep.Columns["Vehículo"].Visible = false;
+
+            TotalReportes();
         }
 
 
         
     private void btnBuscarReporte_Click(object sender, EventArgs e)
         {
-            DateTime Fecha = datePickFecha.Value;
-            BuscarDatos(Fecha);
+            DateTime FechaInicio = datePickFecha.Value;
+            DateTime FechaFinal = datePickFecha2.Value;
+            BuscarDatos(FechaInicio, FechaFinal);
 
-            //if (tbReporteBindingSource.Count == 0)
-            //{
-                // No se encontraron reportes con la fecha especificada, muestra un mensaje
-            //    MessageBox.Show("No se encontraron reportes con la fecha especificada.", "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            TotalReportes();
 
+            btnRegresar.Visible = true;
 
         }
 
-        private void BuscarDatos(DateTime fecha)
+        public void TotalReportes()
         {
-            datosRep.DataSource = reporte.BuscarReporte(fecha);
+            int total = 0;
+            total = datosRep.RowCount;
+            labelCantidad.Text = total.ToString();
+        }
+
+        private void totalRep()
+        {
+            int total = 0;
+            total = (int)adapter.fTotalReportes();
+
+            labelCantidad.Text = total.ToString();
+        }
+
+        private void BuscarDatos(DateTime fechaInicio, DateTime fechaFinal)
+        {
+            datosRep.DataSource = reporte.BuscarReporte(fechaInicio, fechaFinal);
 
 
             if (datosRep.Rows.Count == 0)
@@ -102,19 +117,19 @@ namespace ProjectSGR
                 
                 frm.idReporte = ide;
                 
-                frm.txtViajes.Text = datosRep.CurrentRow.Cells["cantViajes"].Value.ToString();
+                frm.txtViajes.Text = datosRep.CurrentRow.Cells["Viajes"].Value.ToString();
                 frm.txtFecha.Text = ((DateTime)datosRep.CurrentRow.Cells["Fecha"].Value).ToString("dd/MM/yyyy");
-                frm.txtVehiculo.Text = datosRep.CurrentRow.Cells["nombre"].Value.ToString();
-                frm.txtTurno.Text = datosRep.CurrentRow.Cells["turno"].Value.ToString();
-                frm.txtPiloto.Text = datosRep.CurrentRow.Cells["pagoPiloto"].Value.ToString();
-                frm.txtAyudante.Text = datosRep.CurrentRow.Cells["pagoAyudante"].Value.ToString();
-                frm.txtCombustible.Text = datosRep.CurrentRow.Cells["pagoCombustible"].Value.ToString();
-                frm.txtViaticos.Text = datosRep.CurrentRow.Cells["pagoViaticos"].Value.ToString();
-                frm.txtExtras.Text = datosRep.CurrentRow.Cells["pagoExtras"].Value.ToString();
-                frm.txtTotalIngresos.Text = datosRep.CurrentRow.Cells["TotalIngresos"].Value.ToString();
-                frm.txtTotalEgresos.Text = datosRep.CurrentRow.Cells["TotalEgresos"].Value.ToString();
+                frm.txtVehiculo.Text = datosRep.CurrentRow.Cells["Vehículo"].Value.ToString();
+                frm.txtTurno.Text = datosRep.CurrentRow.Cells["Turno"].Value.ToString();
+                frm.txtPiloto.Text = datosRep.CurrentRow.Cells["Pago Piloto"].Value.ToString();
+                frm.txtAyudante.Text = datosRep.CurrentRow.Cells["Pago Ayudante"].Value.ToString();
+                frm.txtCombustible.Text = datosRep.CurrentRow.Cells["Combustible"].Value.ToString();
+                frm.txtViaticos.Text = datosRep.CurrentRow.Cells["Viáticos"].Value.ToString();
+                frm.txtExtras.Text = datosRep.CurrentRow.Cells["Extras"].Value.ToString();
+                frm.txtTotalIngresos.Text = datosRep.CurrentRow.Cells["Total Ingresos"].Value.ToString();
+                frm.txtTotalEgresos.Text = datosRep.CurrentRow.Cells["Total Egresos"].Value.ToString();
                 frm.txtCapital.Text = datosRep.CurrentRow.Cells["Capital"].Value.ToString();
-                frm.txtComentario.Text = datosRep.CurrentRow.Cells["comentario"].Value.ToString();
+                frm.txtComentario.Text = datosRep.CurrentRow.Cells["Comentario"].Value.ToString();
 
                 frm.ShowDialog();
                 MostrarDatos();
@@ -150,16 +165,16 @@ namespace ProjectSGR
                 frm.idd = ide;
                 frm.ListarVehi();
                 
-                frm.txtCantViajes.Text = datosRep.CurrentRow.Cells["cantViajes"].Value.ToString();
+                frm.txtCantViajes.Text = datosRep.CurrentRow.Cells["Viajes"].Value.ToString();
                 frm.cBoxVehiculo.SelectedValue = Convert.ToInt32(datosRep.CurrentRow.Cells["idVehiculo"].Value);
                 frm.datePick.Text = datosRep.CurrentRow.Cells["Fecha"].Value.ToString();
-                frm.nTurno.Text = datosRep.CurrentRow.Cells["turno"].Value.ToString();
-                frm.txtPiloto.Text = datosRep.CurrentRow.Cells["pagoPiloto"].Value.ToString();
-                frm.txtAyudante.Text = datosRep.CurrentRow.Cells["pagoAyudante"].Value.ToString();
-                frm.txtCombustible.Text = datosRep.CurrentRow.Cells["pagoCombustible"].Value.ToString();
-                frm.txtViaticos.Text = datosRep.CurrentRow.Cells["pagoViaticos"].Value.ToString();
-                frm.txtExtras.Text = datosRep.CurrentRow.Cells["pagoExtras"].Value.ToString();
-                frm.txtComentario.Text = datosRep.CurrentRow.Cells["comentario"].Value.ToString();
+                frm.nTurno.Text = datosRep.CurrentRow.Cells["Turno"].Value.ToString();
+                frm.txtPiloto.Text = datosRep.CurrentRow.Cells["Pago Piloto"].Value.ToString();
+                frm.txtAyudante.Text = datosRep.CurrentRow.Cells["Pago Ayudante"].Value.ToString();
+                frm.txtCombustible.Text = datosRep.CurrentRow.Cells["Combustible"].Value.ToString();
+                frm.txtViaticos.Text = datosRep.CurrentRow.Cells["Viáticos"].Value.ToString();
+                frm.txtExtras.Text = datosRep.CurrentRow.Cells["Extras"].Value.ToString();
+                frm.txtComentario.Text = datosRep.CurrentRow.Cells["Comentario"].Value.ToString();
 
                 int ca = datosIng.RowCount - 1;
                 frm.crearTextBox(ca);
@@ -223,7 +238,8 @@ namespace ProjectSGR
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MostrarDatos();
+            btnRegresar.Visible = false;
         }
 
         private void datosRep_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -243,5 +259,7 @@ namespace ProjectSGR
                 }
             }
         }
+
+        
     }
 }

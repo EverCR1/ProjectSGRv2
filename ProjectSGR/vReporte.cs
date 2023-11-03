@@ -31,7 +31,7 @@ namespace ProjectSGR
         private void MostrarDatos()
         {
             datosRepDetalles.DataSource = reporte.ListarIngresos(idReporte);
-            //datosRep.Columns["idReporte"].Visible = false;
+            datosRepDetalles.Columns["idReporte"].Visible = false;
             
         }
 
