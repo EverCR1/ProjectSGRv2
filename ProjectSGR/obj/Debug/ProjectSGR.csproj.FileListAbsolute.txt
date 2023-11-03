@@ -39,8 +39,10 @@ C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.exe
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.pdb
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCrearUsuario.resources
-C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEditarUsuario.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\itextsharp.dll
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\bin\Debug\itextsharp.xml
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.csproj.CopyComplete
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmCambiarContraseña.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmDetallesUsuario.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmVerUsuario.resources

@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bdSGRDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmCambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContraseña.designer.cs">
+      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +94,11 @@
     <Compile Include="frmCrearUsuario.designer.cs">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditarUsuario.cs">
+    <Compile Include="frmDetallesUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditarUsuario.designer.cs">
-      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    <Compile Include="frmDetallesUsuario.designer.cs">
+      <DependentUpon>frmDetallesUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -112,6 +118,12 @@
     <Compile Include="frmVerReporte.Designer.cs">
       <DependentUpon>frmVerReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerUsuario.designer.cs">
+      <DependentUpon>frmVerUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -127,14 +139,17 @@
     <Compile Include="vReporte.Designer.cs">
       <DependentUpon>vReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmCambiarContraseña.resx">
+      <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrearReporte.resx">
       <DependentUpon>frmCrearReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearUsuario.resx">
       <DependentUpon>frmCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditarUsuario.resx">
-      <DependentUpon>frmEditarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="frmDetallesUsuario.resx">
+      <DependentUpon>frmDetallesUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -144,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerReporte.resx">
       <DependentUpon>frmVerReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerUsuario.resx">
+      <DependentUpon>frmVerUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

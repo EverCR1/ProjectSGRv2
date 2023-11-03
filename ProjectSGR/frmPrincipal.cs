@@ -70,15 +70,11 @@ namespace ProjectSGR
 
         private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCrearUsuario frmCrearUsuario = new frmCrearUsuario();
-            frmCrearUsuario.ShowDialog();
+            frmVerUsuario frmVerUsuario = new frmVerUsuario();
+            frmVerUsuario.ShowDialog();
         }
 
-        private void editarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmEditarUsuario frmEditarUsuario = new frmEditarUsuario();
-            frmEditarUsuario.ShowDialog();
-        }
+        
 
         private void eOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -145,6 +141,65 @@ namespace ProjectSGR
                 {
                     MessageBox.Show("Error al guardar la copia de seguridad: " + ex.Message);
                 }
+            }
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCambiarContraseña frmCambiar = new frmCambiarContraseña();
+            frmCambiar.ShowDialog();
+        }
+
+        private void verPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            detallesPilotoTableAdapter detalleP = new detallesPilotoTableAdapter();
+            detallesUsuarioTableAdapter detalleU = new detallesUsuarioTableAdapter();
+            int cargo = (int)adapter.FPermisos(Usuarios.idUsuario);
+            int perfil = Usuarios.idUsuario;
+
+            if (cargo == 2)
+            {
+                DataTable dataP = new DataTable();
+                dataP = detalleP.GetData(perfil);
+
+                frmDetallesUsuario frm = new frmDetallesUsuario();
+                DataRow fila = dataP.Rows[0];
+                frm.idUsuario = perfil;
+                frm.txtDPI.Text = fila["DPI"].ToString();
+                frm.txtNombre.Text = fila["nombres"].ToString();
+                frm.txtApellido.Text = fila["apellidos"].ToString();
+                frm.txtUsername.Text = fila["username"].ToString();
+                frm.txtCargo.Text = fila["Cargo"].ToString();
+                frm.txtLicencia.Text = fila["tipoLicencia"].ToString();
+                frm.txtEdad.Text = fila["Edad"].ToString();
+                frm.txtFecha.Text = ((DateTime)fila["fechaNac"]).ToString("dd/MM/yyyy");
+
+                frm.label1.Visible = true;
+                frm.txtLicencia.Visible = true;
+
+                frm.ShowDialog();
+            }
+
+            else if(cargo == 1 || cargo == 3)
+            {
+                DataTable dataU = new DataTable();
+                dataU = detalleU.GetData(perfil);
+
+                frmDetallesUsuario frm = new frmDetallesUsuario();
+                DataRow fila = dataU.Rows[0];
+                frm.idUsuario = perfil;
+                frm.txtDPI.Text = fila["DPI"].ToString();
+                frm.txtNombre.Text = fila["nombres"].ToString();
+                frm.txtApellido.Text = fila["apellidos"].ToString();
+                frm.txtUsername.Text = fila["username"].ToString();
+                frm.txtCargo.Text = fila["Cargo"].ToString();
+                frm.txtEdad.Text = fila["Edad"].ToString();
+                frm.txtFecha.Text = ((DateTime)fila["fechaNac"]).ToString("dd/MM/yyyy");
+
+                frm.label1.Visible = false;
+                frm.txtLicencia.Visible = false;
+
+                frm.ShowDialog();
             }
         }
     }

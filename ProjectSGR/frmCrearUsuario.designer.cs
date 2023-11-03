@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearUsuario));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,9 +54,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.bdSGRDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.cbLicencia = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtConfirmarPass = new System.Windows.Forms.TextBox();
+            this.txtLicencia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bdSGRDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdSGRDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUsuarioBindingSource)).BeginInit();
@@ -65,106 +68,74 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 62);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DPI  :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 126);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre :";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 191);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Apellido :";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 267);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Username :";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 267);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Contraseña :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(311, 126);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Cargo :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(311, 191);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Fecha de Nacimiento :";
             // 
             // txtDPI
             // 
-            this.txtDPI.Location = new System.Drawing.Point(76, 59);
+            this.txtDPI.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtDPI, "txtDPI");
             this.txtDPI.Name = "txtDPI";
-            this.txtDPI.Size = new System.Drawing.Size(224, 22);
-            this.txtDPI.TabIndex = 7;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(92, 123);
+            this.txtNombre.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 22);
-            this.txtNombre.TabIndex = 8;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(94, 188);
+            this.txtApellido.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtApellido, "txtApellido");
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(196, 22);
-            this.txtApellido.TabIndex = 9;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(107, 264);
+            this.txtUsername.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtUsername, "txtUsername");
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(183, 22);
-            this.txtUsername.TabIndex = 10;
             // 
             // cbCargo
             // 
+            this.cbCargo.BackColor = System.Drawing.Color.LightGray;
             this.cbCargo.DataSource = this.bdSGRDataSet;
             this.cbCargo.DisplayMember = "tbCargo.Cargo";
+            resources.ApplyResources(this.cbCargo, "cbCargo");
             this.cbCargo.FormattingEnabled = true;
-            this.cbCargo.Location = new System.Drawing.Point(361, 123);
             this.cbCargo.Name = "cbCargo";
-            this.cbCargo.Size = new System.Drawing.Size(162, 24);
-            this.cbCargo.TabIndex = 11;
             this.cbCargo.ValueMember = "tbUsuario.idCargo";
             this.cbCargo.SelectedIndexChanged += new System.EventHandler(this.cbCargo_SelectedIndexChanged);
             // 
@@ -175,18 +146,18 @@
             // 
             // datePick
             // 
-            this.datePick.Location = new System.Drawing.Point(452, 188);
+            this.datePick.CalendarMonthBackground = System.Drawing.Color.LightGray;
+            this.datePick.CalendarTitleBackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.datePick, "datePick");
             this.datePick.Name = "datePick";
-            this.datePick.Size = new System.Drawing.Size(266, 22);
-            this.datePick.TabIndex = 12;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(405, 264);
+            this.txtPass.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtPass, "txtPass");
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(217, 22);
-            this.txtPass.TabIndex = 13;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // bdSGRDataSetBindingSource
             // 
@@ -213,22 +184,18 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(320, 394);
+            this.btnCrear.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.btnCrear, "btnCrear");
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(126, 29);
-            this.btnCrear.TabIndex = 14;
-            this.btnCrear.Text = "Crear";
-            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(479, 394);
+            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.btnCancelar, "btnCancelar");
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(127, 29);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // bdSGRDataSetBindingSource1
@@ -238,51 +205,50 @@
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(570, 126);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tipo de Licencia :";
-            this.label8.Visible = false;
-            // 
-            // cbLicencia
-            // 
-            this.cbLicencia.FormattingEnabled = true;
-            this.cbLicencia.Location = new System.Drawing.Point(694, 123);
-            this.cbLicencia.Name = "cbLicencia";
-            this.cbLicencia.Size = new System.Drawing.Size(150, 24);
-            this.cbLicencia.TabIndex = 1;
-            this.cbLicencia.Visible = false;
-            this.cbLicencia.SelectedIndexChanged += new System.EventHandler(this.cbLicencia_SelectedIndexChanged);
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(311, 314);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 16);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Confirmar Contraseña :";
             // 
             // txtConfirmarPass
             // 
-            this.txtConfirmarPass.Location = new System.Drawing.Point(453, 311);
+            this.txtConfirmarPass.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtConfirmarPass, "txtConfirmarPass");
             this.txtConfirmarPass.Name = "txtConfirmarPass";
-            this.txtConfirmarPass.Size = new System.Drawing.Size(169, 22);
-            this.txtConfirmarPass.TabIndex = 17;
             this.txtConfirmarPass.UseSystemPasswordChar = true;
+            // 
+            // txtLicencia
+            // 
+            this.txtLicencia.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.txtLicencia, "txtLicencia");
+            this.txtLicencia.Name = "txtLicencia";
+            this.txtLicencia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // frmCrearUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(919, 447);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtLicencia);
             this.Controls.Add(this.txtConfirmarPass);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.cbLicencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.txtPass);
@@ -300,8 +266,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCrearUsuario";
-            this.Text = "Crear Usuarios";
             this.Load += new System.EventHandler(this.frmCrearUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bdSGRDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdSGRDataSetBindingSource)).EndInit();
@@ -322,15 +289,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDPI;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.ComboBox cbCargo;
-        private System.Windows.Forms.DateTimePicker datePick;
         private System.Windows.Forms.BindingSource bdSGRDataSetBindingSource;
         private bdSGRDataSet bdSGRDataSet;
-        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.BindingSource tbUsuarioBindingSource;
         private bdSGRDataSetTableAdapters.tbUsuarioTableAdapter tbUsuarioTableAdapter;
         private System.Windows.Forms.BindingSource tbCargoBindingSource;
@@ -339,8 +299,17 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.BindingSource bdSGRDataSetBindingSource1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbLicencia;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtConfirmarPass;
+        public System.Windows.Forms.TextBox txtDPI;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtUsername;
+        public System.Windows.Forms.ComboBox cbCargo;
+        public System.Windows.Forms.DateTimePicker datePick;
+        public System.Windows.Forms.TextBox txtPass;
+        public System.Windows.Forms.TextBox txtConfirmarPass;
+        public System.Windows.Forms.TextBox txtLicencia;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
