@@ -43,11 +43,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 25);
+            this.label1.Location = new System.Drawing.Point(20, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 39);
+            this.label1.Size = new System.Drawing.Size(374, 39);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Capital Semanal";
+            this.label1.Text = "Capital de la Última Semana";
             // 
             // btnImprimir
             // 
@@ -122,7 +122,6 @@
             this.MaximizeBox = false;
             this.Name = "frmEstadisticaIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstadisticaIn";
             this.Load += new System.EventHandler(this.frmEstadisticaIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartCapital)).EndInit();
             this.ResumeLayout(false);

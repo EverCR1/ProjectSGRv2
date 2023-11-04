@@ -37,7 +37,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
@@ -94,7 +93,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 264);
+            this.label8.Location = new System.Drawing.Point(0, 267);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 24);
             this.label8.TabIndex = 7;
@@ -136,17 +135,6 @@
             this.txtUsername.Size = new System.Drawing.Size(227, 28);
             this.txtUsername.TabIndex = 12;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(728, 256);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(129, 40);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.Text = "Cerrar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -161,7 +149,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(465, 264);
+            this.label1.Location = new System.Drawing.Point(451, 267);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 24);
             this.label1.TabIndex = 19;
@@ -201,7 +189,7 @@
             // 
             this.txtLicencia.BackColor = System.Drawing.Color.LightGray;
             this.txtLicencia.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLicencia.Location = new System.Drawing.Point(619, 267);
+            this.txtLicencia.Location = new System.Drawing.Point(619, 263);
             this.txtLicencia.Name = "txtLicencia";
             this.txtLicencia.Size = new System.Drawing.Size(78, 28);
             this.txtLicencia.TabIndex = 27;
@@ -241,7 +229,6 @@
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
@@ -268,7 +255,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtDPI;
         public System.Windows.Forms.TextBox txtNombre;

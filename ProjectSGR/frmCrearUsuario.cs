@@ -291,24 +291,47 @@ namespace ProjectSGR
 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
-
-            string contraseña = txtPass.Text;
-
-
-            string patron = @"\w*";
-            //@"^(?=.[a-z])(?=.[A-Z])(?=.*\W).{6,}$"
-
-            // Validar la contraseña con una expresión regular
-            if (Regex.IsMatch(contraseña, patron))
+            if (AlgoritmoContraseña(txtPass.Text))
             {
-                // La contraseña cumple con los requisitos
+                btnCrear.Enabled = true;
                 label10.Visible = false;
             }
             else
             {
-                // La contraseña no cumple con los requisitos
+                btnCrear.Enabled = false;
                 label10.Visible = true;
             }
+
+        }
+
+        private bool AlgoritmoContraseña(string password)
+        {
+            bool mayuscula = false, minuscula = false, numero = false, especial = false;
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (Char.IsUpper(password, i))
+                {
+                    mayuscula = true;
+                }
+                else if (Char.IsLower(password, i))
+                {
+                    minuscula = true;
+                }
+                else if (Char.IsDigit(password, i))
+                {
+                    numero = true;
+                }
+                else
+                {
+                    especial = true;
+                }
+            }
+            if (mayuscula && minuscula && numero && especial && password.Length >= 6)
+            {
+                return true;
+            }
+            return false;
+
         }
     }
 }

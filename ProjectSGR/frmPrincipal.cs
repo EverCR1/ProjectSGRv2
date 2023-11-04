@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using Vehiculo;
 
 namespace ProjectSGR
 {
@@ -108,6 +109,7 @@ namespace ProjectSGR
                 respaldoToolStripMenuItem.Visible = false;
                 editarReporteToolStripMenuItem.Visible = false;
                 respaldoToolStripMenuItem.Visible = false;
+                estadísticaToolStripMenuItem.Visible = false;
             }
 
             else
@@ -117,6 +119,7 @@ namespace ProjectSGR
                 respaldoToolStripMenuItem.Visible = true;
                 editarReporteToolStripMenuItem.Visible = true;
                 respaldoToolStripMenuItem.Visible = true;
+                estadísticaToolStripMenuItem.Visible = true;
             }
         }
 
@@ -213,6 +216,12 @@ namespace ProjectSGR
         {
             frmEstadisticaIn frmEstadisticaIn = new frmEstadisticaIn();
             frmEstadisticaIn.ShowDialog();
+        }
+
+        private void editarVehículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerVehiculos frmVerVehiculos = new frmVerVehiculos();
+            frmVerVehiculos.ShowDialog();
         }
     }
 }

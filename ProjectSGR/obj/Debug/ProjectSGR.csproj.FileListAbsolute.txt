@@ -48,3 +48,5 @@ C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmDet
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmVerUsuario.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEstadisticaV.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEstadisticaIn.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\Vehiculo.frmVerVehiculos.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\Vehiculo.RegistrarVehiculo.resources

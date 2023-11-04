@@ -14,8 +14,8 @@ namespace ProjectSGR
     public partial class frmVerUsuario : Form
     {
         Usuarios usuario = new Usuarios();
-        detallesPilotoTableAdapter detalleP = new detallesPilotoTableAdapter();
-        detallesUsuarioTableAdapter detalleU = new detallesUsuarioTableAdapter();
+        //detallesPilotoTableAdapter detalleP = new detallesPilotoTableAdapter();
+        //detallesUsuarioTableAdapter detalleU = new detallesUsuarioTableAdapter();
         
         public frmVerUsuario()
         {
@@ -26,10 +26,10 @@ namespace ProjectSGR
         {
 
 
-            Refresh();
+            RefreshUser();
         }
 
-        private void Refresh()
+        private void RefreshUser()
         {
 
             //Data Gried View de Usuarios
@@ -74,7 +74,7 @@ namespace ProjectSGR
                 //frm.datePick.Text = dataGridView1.CurrentRow.Cells["fechaNac"].Value.ToString();
 
                 frm.ShowDialog();
-                Refresh();
+                RefreshUser();
 
             }
             else if (dataGridView1.SelectedRows.Count > 0)
@@ -94,7 +94,7 @@ namespace ProjectSGR
                 //frm.datePick.Text = dataPiloto.CurrentRow.Cells["fechaNac"].Value.ToString();
 
                 frm.ShowDialog();
-                Refresh();
+                RefreshUser();
 
 
             }
@@ -109,7 +109,7 @@ namespace ProjectSGR
             frmCrearUsuario frm = new frmCrearUsuario();
             frm.Operacion = "Crear";
             frm.ShowDialog();
-            Refresh();
+            RefreshUser();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace ProjectSGR
                     int ide = Convert.ToInt32(dataPiloto.CurrentRow.Cells[0].Value);
                 usuario.EliminarPiloto(ide);
                 MessageBox.Show("Usuario eliminado correctamente");
-                Refresh();
+                RefreshUser();
                 }
                 else
                 {
@@ -139,7 +139,7 @@ namespace ProjectSGR
                     int ide = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 usuario.EliminarUsuario(ide);
                 MessageBox.Show("Usuario eliminado correctamente");
-                Refresh();
+                RefreshUser();
                 }
                 else
                 {
@@ -152,35 +152,7 @@ namespace ProjectSGR
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-            if (dataPiloto.SelectedRows.Count > 0)
-            {
-                int ide = Convert.ToInt32(dataPiloto.CurrentRow.Cells[0].Value);
-                DataTable data = new DataTable();
-                data = detalleP.GetData(ide);
-
-                frmDetallesUsuario frm = new frmDetallesUsuario();
-                DataRow fila = data.Rows[0];
-                frm.idUsuario = ide;
-                frm.txtDPI.Text = fila["DPI"].ToString();
-                frm.txtNombre.Text = fila["nombres"].ToString();
-                frm.txtApellido.Text = fila["apellidos"].ToString();
-                frm.txtUsername.Text = fila["username"].ToString();
-                frm.txtCargo.Text = fila["Cargo"].ToString();
-                frm.txtLicencia.Text = fila["tipoLicencia"].ToString();
-                frm.txtEdad.Text=fila["Edad"].ToString();
-                frm.txtFecha.Text = ((DateTime)fila["fechaNac"]).ToString("dd/MM/yyyy");
-
-                frm.ShowDialog();
-                Refresh();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un usuario");
-            }
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
