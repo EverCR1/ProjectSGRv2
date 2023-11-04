@@ -17,8 +17,7 @@ namespace Vehiculo
     public partial class RegistrarVehiculo : Form
     {
         vehiculo vehi = new vehiculo();
-        tbVehiculoTableAdapter ta = new
-                tbVehiculoTableAdapter();
+        tbVehiculoTableAdapter ta = new tbVehiculoTableAdapter();
         public string Operacion = "Crear";
         public int Id;
         public RegistrarVehiculo()
