@@ -12,7 +12,7 @@ namespace Vehiculo
 {
     public class vehiculo
     {
-        public static int idVehiculo { get; set; }
+        
         public string Nombre { get; set; }
         public int Capacidad { get; set; }
         public string Marca { get; set; }
@@ -23,7 +23,6 @@ namespace Vehiculo
 
         
         QueriesTableAdapter adapter = new QueriesTableAdapter();
-        //ListarPilotoDataTable listar = new ListarPilotoDataTable();
         LPilotoTableAdapter LPloto = new LPilotoTableAdapter();
         SelectVehiTableAdapter select = new SelectVehiTableAdapter();
         VistaVehiculoTableAdapter vista = new VistaVehiculoTableAdapter();

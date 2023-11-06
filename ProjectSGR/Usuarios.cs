@@ -30,12 +30,6 @@ namespace ProjectSGR
         vListarUsuariosTableAdapter pUsuarios = new vListarUsuariosTableAdapter();
         vListarPilotosTableAdapter pPilotos = new vListarPilotosTableAdapter();
 
-
-       //pListarPilotosTableAdapter pPilotos = new pListarPilotosTableAdapter();
-       // pListarUsuariosTableAdapter pUsuarios = new pListarUsuariosTableAdapter(); 
-
-
-
         public DataTable listarPilotos()
         {
             DataTable data = new DataTable();
