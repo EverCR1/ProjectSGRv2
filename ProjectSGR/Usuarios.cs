@@ -26,7 +26,6 @@ namespace ProjectSGR
         QueriesTableAdapter adapter = new QueriesTableAdapter();
         ListarCargosTableAdapter listarC = new ListarCargosTableAdapter();
 
-
         vListarUsuariosTableAdapter pUsuarios = new vListarUsuariosTableAdapter();
         vListarPilotosTableAdapter pPilotos = new vListarPilotosTableAdapter();
 
