@@ -50,3 +50,4 @@ C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEst
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.frmEstadisticaIn.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\Vehiculo.frmVerVehiculos.resources
 C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\Vehiculo.RegistrarVehiculo.resources
+C:\Users\Ever Corazón\Desktop\ProjectSGR\ProjectSGR\obj\Debug\ProjectSGR.Backup.resources

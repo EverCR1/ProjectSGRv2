@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup.designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="bdSGRDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +171,9 @@
     <Compile Include="vReporte.Designer.cs">
       <DependentUpon>vReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCambiarContraseña.resx">
       <DependentUpon>frmCambiarContraseña.cs</DependentUpon>
     </EmbeddedResource>

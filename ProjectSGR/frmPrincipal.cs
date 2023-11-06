@@ -241,5 +241,11 @@ namespace ProjectSGR
             frmVerVehiculos frmVerVehiculos = new frmVerVehiculos();
             frmVerVehiculos.ShowDialog();
         }
+
+        private void crearCopiaORecuperarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Backup backup = new Backup();
+            backup.ShowDialog();
+        }
     }
 }
