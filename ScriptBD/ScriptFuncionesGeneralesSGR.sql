@@ -76,3 +76,53 @@ WITH REPLACE;
 
 RESTORE DATABASE CopiaPrueba
 FROM DISK = 'C:\CopiasSQL\COPIA_43_15.bak';
+
+--Respaldo Automático
+use bdSGR
+GO
+
+declare @fecha varchar(max)
+declare @ruta varchar(max)
+
+set @fecha = CONVERT(varchar(10),GETDATE(),105)
+set @ruta = 'C:\CopiasProyecto\Auto\COPIA-'+@fecha+'.bak'
+
+BACKUP DATABASE [bdSGR] TO DISK = @ruta
+
+GO
+
+--SCRIPTS PARA LAS ESTADÍSTICAS (GRÁFICAS) DE LA APLICACIÓN
+use bdSGR;
+
+--Determina el Vehículo más Utilizado (es decir, el que tiene más reportes)
+CREATE PROCEDURE pVehiculoMost
+AS BEGIN
+	SELECT
+		Vehículo,
+		COUNT(idReporte) AS Reportes
+	FROM
+		vReporte
+	GROUP BY
+		Vehículo
+	ORDER BY
+		Reportes DESC;
+END
+
+exec pVehiculoMost
+
+select * from tbReporte
+
+--Determina el Capital de un Vehículo en los últimos 7 días
+CREATE PROCEDURE gCapital(@idVehiculo int)
+AS BEGIN
+	SELECT
+		Vehículo,
+		CONVERT(DATE, fecha) AS Fecha,
+		SUM(Capital) AS CapitalDiario
+	FROM vReporte
+	WHERE idVehiculo = @idVehiculo
+		AND fecha >= DATEADD(day, -7, GETDATE())
+	GROUP BY Vehículo, CONVERT(DATE, fecha)
+	ORDER BY CONVERT(DATE, fecha) ASC;
+END
+
