@@ -58,7 +58,7 @@ namespace ProjectSGR
 
             if (dataPiloto.SelectedRows.Count > 0 )
             {
-                int ide = Convert.ToInt32(dataPiloto.CurrentRow.Cells[0].Value);
+                int ide = Convert.ToInt32(dataPiloto.CurrentRow.Cells["idUsuario"].Value);
                 frm.idd = ide;
                 
                 frm.ListarCargos();

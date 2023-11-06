@@ -26,21 +26,25 @@ namespace ProjectSGR
             
         }
 
+        //Evento que se desencadena al activar el formulario 
         private void frmPrincipal_Activated(object sender, EventArgs e)
         {
-            AdminPermisos();
+            AdminPermisos(); //Valida los permisos del usuario que ingresó
         }
 
+        //Evento de carga del formulario
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             frmLogin frmLogin = new frmLogin();
             
             frmLogin.ShowDialog();
             //timerHora.Tick += new EventHandler(timerHora_Tick);
-            timerHora.Start();
+            timerHora.Start(); //Activa el timer
             
         }
 
+
+        //Evento para abrir el formulario de Crear Reporte
         private void crearReporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCrearReporte frmCrearReporte = new frmCrearReporte();
@@ -49,6 +53,7 @@ namespace ProjectSGR
 
         }
 
+        //Evento para volver al Login
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -58,30 +63,33 @@ namespace ProjectSGR
             
         }
 
+        //Evento para finalizar la aplicación
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        ////Evento para abrir el formulario de Administrar Reportes
         private void editarReporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVerReporte frmVerReporte = new frmVerReporte();
             frmVerReporte.ShowDialog();
         }
 
+        //Evento para abrir el formulario de Administrar Usuarios
         private void crearUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVerUsuario frmVerUsuario = new frmVerUsuario();
             frmVerUsuario.ShowDialog();
         }
 
-        
-
+        //Evento para mostrar información de los desarrolladores
         private void eOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MostrarDesarrolladores();
         }
 
+        //Mensaje de información de los programadores
         private void MostrarDesarrolladores()
         {
             string EOM = "Desarrollado por: Ever Corazón, Olsend Luna, Mónica Caal\n"+
@@ -92,18 +100,21 @@ namespace ProjectSGR
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        //Método para mostrar la fecha y hora en el apartado principal
         private void timerHora_Tick(object sender, EventArgs e)
         {
             DateTime horaActual = DateTime.Now;
             labelHora.Text = horaActual.ToString(); //"HH:mm:ss"
         }
 
+        //Método para realizar una consulta y asignar permisos al usuario
         private void AdminPermisos()
         {
             int permiso = (int)adapter.FPermisos(Usuarios.idUsuario);
 
             if (permiso == 2 || permiso == 3)
             {
+                //Oculta los módulos a los que no tiene permiso
                 vehículosToolStripMenuItem.Visible = false;
                 usuariosToolStripMenuItem.Visible = false;
                 respaldoToolStripMenuItem.Visible = false;
@@ -114,6 +125,7 @@ namespace ProjectSGR
 
             else
             {
+                //Muestra los módulos a los cuales tiene permiso
                 vehículosToolStripMenuItem.Visible = true;
                 usuariosToolStripMenuItem.Visible = true;
                 respaldoToolStripMenuItem.Visible = true;
@@ -123,6 +135,7 @@ namespace ProjectSGR
             }
         }
 
+        //Evento para generar una Copia de Seguridad de los datos de la app
         private void realizarCopiaDeSeguridadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Abre el cuadro de diálogo para que el usuario elija la ubicación y el nombre del archivo
@@ -147,12 +160,14 @@ namespace ProjectSGR
             }
         }
 
+        //Evento para abrir el formulario de Cambiar Contraseña
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCambiarContraseña frmCambiar = new frmCambiarContraseña();
             frmCambiar.ShowDialog();
         }
 
+        //Evento para abrir el formulario de Ver Perfil
         private void verPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             detallesPilotoTableAdapter detalleP = new detallesPilotoTableAdapter();
@@ -206,18 +221,21 @@ namespace ProjectSGR
             }
         }
 
+        //Evento para abrir el formulario de Estadísticas 1
         private void vehículoMásUsadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEstadisticaV frmEstadistica = new frmEstadisticaV();
             frmEstadistica.ShowDialog();
         }
 
+        //Evento para abrir el formulario de Estadísticas 2
         private void viajesPorDíaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEstadisticaIn frmEstadisticaIn = new frmEstadisticaIn();
             frmEstadisticaIn.ShowDialog();
         }
 
+        //Evento para abrir el formulario de Administrar Vehículos
         private void editarVehículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVerVehiculos frmVerVehiculos = new frmVerVehiculos();

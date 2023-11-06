@@ -7,6 +7,7 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProjectSGR
 {
@@ -95,6 +96,59 @@ namespace ProjectSGR
         public void EliminarPiloto(int ide)
         {
             adapter.pEliminarPiloto(ide);
+        }
+
+        public bool soloNumeros(KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else
+            {
+                e.Handled = true;
+                return false;
+            }
+        }
+        public bool soloLetras(KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+                return true;
+            }
+            else
+            {
+                e.Handled = true;
+                return false;
+            }
+        }
+
+        //Método para validar que no se repitan nombres de usuario
+        public bool VerificarUsername(string nombre)
+        {
+            int validar = (int)adapter.VerificarUsername(nombre); //Obtiene el nombre del usuario
+
+            if (validar == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

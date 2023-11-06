@@ -35,10 +35,10 @@ namespace Vehiculo
             dataTable = vista.GetData();
             return dataTable;
         }
-        public DataTable ListarP()
+        public DataTable ListarP(int id)
         {
             DataTable dataTable = new DataTable();
-            dataTable = LPloto.GetData();
+            dataTable = LPloto.GetData(id);
             return dataTable;
         }
         public void Registrar_vehiculo()
@@ -61,6 +61,21 @@ namespace Vehiculo
             dt = select.GetData();
             return dt;
         }
-        
+
+        //Método para validar que no se repitan nombres de vehiculos
+        public bool VerificarVehiculo(string nombre)
+        {
+            int validar = (int)adapter.VerificarVehiculo(nombre); //Obtiene el nombre del vehiculo
+
+            if (validar == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        }
     }
-}

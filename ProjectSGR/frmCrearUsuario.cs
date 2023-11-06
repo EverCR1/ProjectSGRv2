@@ -19,9 +19,11 @@ namespace ProjectSGR
         public string Operacion = "Crear";
 
         public int idd;
+        public bool val = false;
+        public bool val2 = false;
 
         Usuarios usuario = new Usuarios();
-
+        ErrorProvider errorP = new ErrorProvider();
 
         public frmCrearUsuario()
         {
@@ -44,29 +46,20 @@ namespace ProjectSGR
 
         private void frmCrearUsuario_Load(object sender, EventArgs e)
         {
+            
             // Agrega elementos al ComboBox
             if (Operacion == "Crear")
             {
-                ListarLicencias();
+  
+                ListarCargos();
             }
             else
             {
 
             }
 
-            // TODO: esta línea de código carga datos en la tabla 'bdSGRDataSet.tbCargo' Puede moverla o quitarla según sea necesario.
-            this.tbCargoTableAdapter.Fill(this.bdSGRDataSet.tbCargo);
-            // TODO: esta línea de código carga datos en la tabla 'bdSGRDataSet.tbUsuario' Puede moverla o quitarla según sea necesario.
-            this.tbUsuarioTableAdapter.Fill(this.bdSGRDataSet.tbUsuario);
-
-
         }
 
-        private void cbLicencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void cbCargo_SelectedIndexChanged(object sender, EventArgs e)
 
@@ -95,6 +88,9 @@ namespace ProjectSGR
 
             if (Operacion == "Crear")
             {
+
+                
+
                 if (txtLicencia.Visible != false)
                 {
                     if (VerificarTextBoxLlenos())
@@ -169,6 +165,8 @@ namespace ProjectSGR
             }
             else if (Operacion == "Editar")
             {
+
+
                 if (txtLicencia.Visible != false)
                 {
                     if (VerificarTextBoxLlenos())
@@ -266,13 +264,7 @@ namespace ProjectSGR
             cbCargo.DisplayMember = "Cargo";
             cbCargo.ValueMember = "idCargo";
         }
-        public void ListarLicencias()
-        {
-            //cbLicencia.DataSource = usuario.ListarLicencia();
-            //cbLicencia.DisplayMember = "Licencia";
-            //cbLicencia.ValueMember = "Licencia";
 
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -293,13 +285,17 @@ namespace ProjectSGR
         {
             if (AlgoritmoContraseña(txtPass.Text))
             {
-                btnCrear.Enabled = true;
+                
                 label10.Visible = false;
+                val = true;
+                ActivarButton();
             }
             else
             {
-                btnCrear.Enabled = false;
+                
                 label10.Visible = true;
+                val = false;
+                ActivarButton();
             }
 
         }
@@ -332,6 +328,93 @@ namespace ProjectSGR
             }
             return false;
 
+        }
+
+        private void txtDPI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = usuario.soloNumeros(e);
+            if (!valida)
+            {
+                errorP.SetError(txtDPI, "Solo números");
+            }
+            else
+            {
+                errorP.Clear();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = usuario.soloLetras(e);
+            if (!valida)
+            {
+                errorP.SetError(txtNombre, "Solo letras");
+            }
+            else
+            {
+                errorP.Clear();
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = usuario.soloLetras(e);
+            if (!valida)
+            {
+                errorP.SetError(txtApellido, "Solo letras");
+            }
+            else
+            {
+                errorP.Clear();
+            }
+        }
+
+        public bool validarUsername(string nombre)
+        {
+            bool validar = usuario.VerificarUsername(nombre);
+
+            if (validar)
+            {
+                return false;
+                
+            }
+            else
+            {
+                return true;
+
+            }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            bool validar = validarUsername(txtUsername.Text);
+
+            if (!validar)
+            {
+                errorP.SetError(txtUsername, "Ya existe ese nombre de usuario \n"
+                            + "Por favor, modifíquelo para continuar");
+                val2 = false;
+                ActivarButton();
+            }
+            else
+            {
+                val2 = true;
+                ActivarButton();
+                errorP.Clear();
+                
+            }
+        }
+
+        private void ActivarButton()
+        {
+            if (val == true && val2 == true)
+            {
+                btnCrear.Enabled = true;
+            }
+            else
+            {
+                btnCrear.Enabled = false;
+            }
         }
     }
 }

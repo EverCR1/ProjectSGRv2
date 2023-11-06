@@ -98,6 +98,8 @@
             this.btnAddViajes.Text = "Añadir";
             this.btnAddViajes.UseVisualStyleBackColor = false;
             this.btnAddViajes.Click += new System.EventHandler(this.btnAddViajes_Click);
+            this.btnAddViajes.Enter += new System.EventHandler(this.btnAddViajes_Enter);
+            this.btnAddViajes.Leave += new System.EventHandler(this.btnAddViajes_Leave);
             // 
             // panelReporte
             // 
@@ -154,6 +156,8 @@
             this.btnCrear.Text = "Guardar";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            this.btnCrear.Enter += new System.EventHandler(this.btnCrear_Enter);
+            this.btnCrear.Leave += new System.EventHandler(this.btnCrear_Leave);
             // 
             // btnCancelar
             // 
@@ -251,6 +255,7 @@
             this.datePick.Name = "datePick";
             this.datePick.Size = new System.Drawing.Size(299, 33);
             this.datePick.TabIndex = 5;
+            this.datePick.ValueChanged += new System.EventHandler(this.datePick_ValueChanged);
             // 
             // nTurno
             // 

@@ -25,14 +25,13 @@ namespace ProjectSGR
             InitializeComponent();
         }
 
+        //Evento de carga
         private void frmVerReporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bdSGRDataSet.tbReporte' Puede moverla o quitarla según sea necesario.
-            //this.tbReporteTableAdapter.Fill(this.bdSGRDataSet.tbReporte);
-            MostrarDatos();
-            
+            MostrarDatos();      
         }
 
+        //Método para mostrar los datos requeridos
         public void MostrarDatos()
         {
             datosRep.DataSource = reporte.ListarReporte();
@@ -52,7 +51,7 @@ namespace ProjectSGR
         }
 
 
-        
+    //Método para buscar reportes al presionar un botón
     private void btnBuscarReporte_Click(object sender, EventArgs e)
         {
             DateTime FechaInicio = datePickFecha.Value;
@@ -65,6 +64,7 @@ namespace ProjectSGR
 
         }
 
+        //Método para contrar y mostrar el Total de Reportes
         public void TotalReportes()
         {
             int total = 0;
@@ -72,14 +72,7 @@ namespace ProjectSGR
             labelCantidad.Text = total.ToString();
         }
 
-        private void totalRep()
-        {
-            int total = 0;
-            total = (int)adapter.fTotalReportes();
-
-            labelCantidad.Text = total.ToString();
-        }
-
+        //Método para buscar datos mediante una consulta
         private void BuscarDatos(DateTime fechaInicio, DateTime fechaFinal)
         {
             datosRep.DataSource = reporte.BuscarReporte(fechaInicio, fechaFinal);
@@ -98,22 +91,24 @@ namespace ProjectSGR
             }
         }
 
+        //Método para llamar al formulario de Creación de Reportes
         private void btnCrearRep_Click(object sender, EventArgs e)
         {
             frmCrearReporte frmCrearReporte = new frmCrearReporte();
             frmCrearReporte.Operacion = "Crear";
             frmCrearReporte.ShowDialog();
-            MostrarDatos();
-            Console.WriteLine(Usuarios.idUsuario);
+            MostrarDatos(); //Resfresca la tabla
+            //Console.WriteLine(Usuarios.idUsuario);
         }
 
+        //Método para mostrar los detalles de un reporte
         private void btnDetalles_Click(object sender, EventArgs e)
         {
             if (datosRep.SelectedRows.Count > 0)
             {
                 vReporte frm = new vReporte();
                 
-                int ide = Convert.ToInt32(datosRep.CurrentRow.Cells[0].Value);
+                int ide = Convert.ToInt32(datosRep.CurrentRow.Cells["idReporte"].Value);
                 obtenerIngresos(ide);
                 
                 frm.idReporte = ide;
@@ -141,6 +136,7 @@ namespace ProjectSGR
             }
         }
 
+        //Método para obtener los datos de los Ingresos en una tabla
         public DataTable ListarIngresos(int ide)
         {
             DataTable dataTable = new DataTable();
@@ -148,11 +144,13 @@ namespace ProjectSGR
             return dataTable;
         }
 
+        //Método para mostrar los ingresos en una tabla
         private void obtenerIngresos(int ide)
         {
             datosIng.DataSource = ListarIngresos(ide);
         }
 
+        //Método para editar la información de un reporte
         public void btnEditarReporte_Click(object sender, EventArgs e)
         {
             if(datosRep.SelectedRows.Count > 0)
@@ -169,6 +167,7 @@ namespace ProjectSGR
                 frm.txtCantViajes.Text = datosRep.CurrentRow.Cells["Viajes"].Value.ToString();
                 frm.cBoxVehiculo.SelectedValue = Convert.ToInt32(datosRep.CurrentRow.Cells["idVehiculo"].Value);
                 frm.datePick.Text = datosRep.CurrentRow.Cells["Fecha"].Value.ToString();
+                frm.fechaOri = ((DateTime)datosRep.CurrentRow.Cells["Fecha"].Value);
                 frm.nTurno.Text = datosRep.CurrentRow.Cells["Turno"].Value.ToString();
                 frm.txtPiloto.Text = datosRep.CurrentRow.Cells["Pago Piloto"].Value.ToString();
                 frm.txtAyudante.Text = datosRep.CurrentRow.Cells["Pago Ayudante"].Value.ToString();
@@ -198,7 +197,7 @@ namespace ProjectSGR
                 }
 
                 frm.ShowDialog();
-                MostrarDatos();
+                MostrarDatos(); //Refrescar
 
             }
             else
@@ -207,6 +206,7 @@ namespace ProjectSGR
             }
         }
 
+        //Método para eliminar un reporte
         private void btnEliminarReporte_Click(object sender, EventArgs e)
         {
             if (datosRep.SelectedRows.Count > 0)
@@ -233,16 +233,19 @@ namespace ProjectSGR
             }
             else
             {
+                //Verifica que se seleccione un reporte
                 MessageBox.Show("Debe seleccionar un reporte");
             }
         }
 
+        //Método para regresar a la lista principal de reportes
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             MostrarDatos();
             btnRegresar.Visible = false;
         }
 
+        //Evento para aplicar condicionales a las celdas
         private void datosRep_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (this.datosRep.Columns[e.ColumnIndex].Name == "Capital")

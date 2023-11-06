@@ -693,16 +693,16 @@
     <value>Comic Sans MS, 7.8pt</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>410, 248</value>
+    <value>367, 254</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>447, 18</value>
+    <value>499, 18</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>La contraseña debe tener minimo 6 digitos, 1 numero y 1 simbolo especial</value>
+    <value>La contraseña debe tener minimo 6 digitos, 1 numero, 1 mayus, 1 minus y 1 simbolo</value>
   </data>
   <data name="label10.Visible" type="System.Boolean, mscorlib">
     <value>False</value>

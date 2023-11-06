@@ -24,32 +24,28 @@ namespace ProjectSGR
             InitializeComponent();
         }
 
+        //Método para generar la información de la gráfica
         private void Generar(int id)
         {
             DataTable datos = new DataTable();
-            datos = cap.GetData(id);
+            datos = cap.GetData(id); //Recuperar los datos
 
-            // Asegúrate de que los datos estén ordenados por fecha
             datos.DefaultView.Sort = "Fecha ASC"; // Orden ascendente por fecha
             datos = datos.DefaultView.ToTable();
 
             int numfilas = datos.Rows.Count;
-            int cantidadVeces = 0;
 
             for (int i = 0; i < numfilas; i++)
             {
-
+                //Muestra los datos en la gráfica
                 DateTime fecha = Convert.ToDateTime(datos.Rows[i]["Fecha"]); // Convierte el valor a DateTime
                 string fec = ((DateTime)datos.Rows[i]["Fecha"]).ToString("dd/MM/yyyy");
                 chartCapital.Series["CapitalS"].Points.AddXY(fec, datos.Rows[i]["CapitalDiario"]);
 
-                cantidadVeces = cantidadVeces +
-                    Convert.ToInt32(datos.Rows[i]["CapitalDiario"]);
             }
-
-            
         }
 
+        //Método para listar los vehículos con la finalidad de obtener uno al cual generarle gráfica
         public void ListarVehi()
         {
             cmbVehiculo.DataSource = reporte.ListarVe();
@@ -57,17 +53,19 @@ namespace ProjectSGR
             cmbVehiculo.ValueMember = "IdVehiculo";
         }
 
+        //Évento tras presionar el botón de Generar
         private void button1_Click(object sender, EventArgs e)
         {
-            chartCapital.Series.Clear();
+            chartCapital.Series.Clear(); //Limpia el chart
 
+            //Crea una nueva serie
             Series serieCapital = new Series("CapitalS");
             serieCapital.ChartType = SeriesChartType.Line;
             serieCapital.IsVisibleInLegend = false;
             chartCapital.Series.Add(serieCapital);
 
             int ide = (int)cmbVehiculo.SelectedValue;
-            Generar(ide);
+            Generar(ide); //Genera
             btnImprimir.Visible = true;
         }
 
@@ -76,6 +74,7 @@ namespace ProjectSGR
             ListarVehi();
         }
 
+        //Método para generar un PDF del chart (Imagen)
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             // Crea un nuevo documento PDF
@@ -116,6 +115,7 @@ namespace ProjectSGR
                     chartCapital.Width = 600;
                     chartCapital.Height = 400;
 
+                    //Crear la imagen en el pdf
                     MemoryStream chartImage = new MemoryStream();
                     chartCapital.SaveImage(chartImage, ChartImageFormat.Png);
                     iTextSharp.text.Image chartImageElement = iTextSharp.text.Image.GetInstance(chartImage.GetBuffer());
@@ -130,12 +130,12 @@ namespace ProjectSGR
                     // Mostrar un mensaje de éxito
                     MessageBox.Show("El archivo PDF se ha generado correctamente");
 
-                    // Abre el PDF automáticamente con el visor de PDF predeterminado:
+                    // Abre el PDF automáticamente con el visor de PDF predeterminado
                     System.Diagnostics.Process.Start(filePath);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar el PDF: " + ex.Message);
+                    MessageBox.Show("Error al guardar el PDF: " + ex.Message); //Mensaje de error
                 }
             }
         }

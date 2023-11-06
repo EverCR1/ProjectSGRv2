@@ -23,11 +23,13 @@ namespace ProjectSGR
             InitializeComponent();
         }
 
+        //Evento de carga
         private void vReporte_Load(object sender, EventArgs e)
         {
             MostrarDatos();
         }
 
+        //Método para Mostrar Datos del Reporte
         private void MostrarDatos()
         {
             datosRepDetalles.DataSource = reporte.ListarIngresos(idReporte);
@@ -35,6 +37,7 @@ namespace ProjectSGR
             
         }
 
+        //Método para generar PDFs
         private void btnPdf_Click(object sender, EventArgs e)
         {
             // Crea un nuevo documento PDF
@@ -142,12 +145,12 @@ namespace ProjectSGR
                     // Cierra el documento
                     doc.Close();
 
-                    MessageBox.Show("PDF guardado exitosamente");
-                    System.Diagnostics.Process.Start(filePath);
+                    MessageBox.Show("PDF guardado exitosamente"); //Mensaje de confirmación
+                    System.Diagnostics.Process.Start(filePath); //Abre el documento
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar el PDF: " + ex.Message);
+                    MessageBox.Show("Error al guardar el PDF: " + ex.Message); //Mensaje de error
                 }
             }
 

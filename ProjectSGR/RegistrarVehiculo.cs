@@ -17,7 +17,8 @@ namespace Vehiculo
     public partial class RegistrarVehiculo : Form
     {
         vehiculo vehi = new vehiculo();
-        tbVehiculoTableAdapter ta = new tbVehiculoTableAdapter();
+        ErrorProvider errorP = new ErrorProvider();
+
         public string Operacion = "Crear";
         public int Id;
         public RegistrarVehiculo()
@@ -38,7 +39,7 @@ namespace Vehiculo
                     vehi.Marca = txtMarca.Text;
                     vehi.Color = txtColor.Text;
                     vehi.Estado = txtEstado.Text;
-                    vehi.idPiloto = (byte)(int)txtIdPiloto.SelectedValue;
+                    vehi.idPiloto = (int)txtIdPiloto.SelectedValue;
                     vehi.idUsuario = Usuarios.idUsuario;
                     // vehi.idPiloto = (int)txtIdPiloto.SelectedValue;
                     //vehi.idUsuario = (int)txtIdUsuario.SelectedValue;
@@ -60,7 +61,7 @@ namespace Vehiculo
                     vehi.Marca = txtMarca.Text;
                     vehi.Color = txtColor.Text;
                     vehi.Estado = txtEstado.Text;
-                    vehi.idPiloto = (byte)(int)txtIdPiloto.SelectedValue;
+                    vehi.idPiloto = (int)txtIdPiloto.SelectedValue;
                     vehi.idUsuario = Usuarios.idUsuario;
                     // vehi.idPiloto = (int)txtIdPiloto.SelectedValue;
                     //vehi.idUsuario = (int)txtIdUsuario.SelectedValue;
@@ -76,7 +77,7 @@ namespace Vehiculo
                     MessageBox.Show("Por favor, debe llenar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            this.Close();
+            //this.Close();
             
         }
         public bool verificarTextBoxllenos()
@@ -101,22 +102,29 @@ namespace Vehiculo
         {
             this.Close();
         }
-        public void ListarPiloto()
+        public void ListarPiloto(int id)
         {
-            txtIdPiloto.DataSource = vehi.ListarP();
+            txtIdPiloto.DataSource = vehi.ListarP(id);
             txtIdPiloto.DisplayMember = "Nombres";
             txtIdPiloto.ValueMember = "IdPiloto";
         }
 
         private void RegistrarVehiculo_Load(object sender, EventArgs e)
         {
-            ListarPiloto();
+            if(Operacion == "Crear")
+            {
+                ListarPiloto(2);
+            }
+            else
+            {
+
+            }
 
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            
+            validarVehiculo(txtNombre.Text);
         }
 
         public void ValidarLetras(KeyPressEventArgs e)
@@ -167,6 +175,24 @@ namespace Vehiculo
         private void txtEstado_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarLetras(e);
+        }
+
+        public void validarVehiculo(string nombre)
+        {
+            bool validar = vehi.VerificarVehiculo(nombre);
+
+            if (validar)
+            {
+                errorP.SetError(txtNombre, "Ya existe ese nombre de Vehículo \n"
+                    + "Por favor, modifíquelo para continuar");
+                btnGuardar.Enabled = false;
+            }
+            else
+            {
+                btnGuardar.Enabled = true;
+                errorP.Clear();
+
+            }
         }
     }
 }

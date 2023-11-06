@@ -30,24 +30,23 @@ namespace ProjectSGR
 
         }
 
+        //Método para cargar datos provenientes de una consulta
         private void VehiculoUsado()
         {
             DataTable data = new DataTable();
-            data = most.GetData();
+            data = most.GetData(); //Recupera la información
 
-            int numfilas = data.Rows.Count;
-            int cantidadVeces = 0;
+            int numfilas = data.Rows.Count; //Número de filas
 
             for(int i = 0; i < numfilas; i++)
             {
                 chartVehiculo.Series["VehiculoS"].Points.AddXY(data.Rows[i]["Vehículo"], 
-                    data.Rows[i]["Reportes"]);
+                    data.Rows[i]["Reportes"]); //Muestra la cantidad de reportes por cada Vehículo
 
-                cantidadVeces = cantidadVeces + 
-                    Convert.ToInt32(data.Rows[i]["Reportes"]);
             }
         }
 
+        //Método para generar un PDF a partir de la gráfica
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             // Crea un nuevo documento PDF
@@ -85,6 +84,7 @@ namespace ProjectSGR
                     chartVehiculo.Width = 600; 
                     chartVehiculo.Height = 400;
 
+                    //Sección para enviar el chart(Imagen) al pdf
                     MemoryStream chartImage = new MemoryStream();
                     chartVehiculo.SaveImage(chartImage, ChartImageFormat.Png);
                     iTextSharp.text.Image chartImageElement = iTextSharp.text.Image.GetInstance(chartImage.GetBuffer());
@@ -99,12 +99,12 @@ namespace ProjectSGR
                     // Mostrar un mensaje de éxito
                     MessageBox.Show("El archivo PDF se ha generado correctamente");
 
-                    // Abre el PDF automáticamente con el visor de PDF predeterminado:
+                    // Abre el PDF automáticamente con el visor de PDF predeterminado
                     System.Diagnostics.Process.Start(filePath);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar el PDF: " + ex.Message);
+                    MessageBox.Show("Error al guardar el PDF: " + ex.Message); //Mensaje de error
                 }
             }
         }

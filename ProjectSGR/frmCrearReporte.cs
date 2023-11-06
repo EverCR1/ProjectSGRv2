@@ -20,12 +20,15 @@ namespace ProjectSGR
         public List<System.Windows.Forms.TextBox> textBoxes = new List<System.Windows.Forms.TextBox>();
         public List<decimal> listaInge = new List<decimal>();
         Reporte reporte = new Reporte();
-        frmVerReporte ver = new frmVerReporte();
+        Usuarios usuario = new Usuarios();
+        ErrorProvider errorP = new ErrorProvider();
 
         //Variables de control
         public bool controlI = false;
         public string Operacion = "Crear";
         public int idd;
+        public bool fechaC = false;
+        public DateTime fechaOri;
         
         public frmCrearReporte()
         {
@@ -75,7 +78,7 @@ namespace ProjectSGR
                     textBox.KeyDown += TextBox_KeyDown;
                     textBox.KeyPress += TextBox_KeyPress;
 
-                    // Asocia el evento TextChanged a una función de suma
+                    
                     textBox.TextChanged += TextBox_TextChanged;
 
                     // Agrega los nuevos controles al panel
@@ -96,6 +99,7 @@ namespace ProjectSGR
             }
         }
 
+        //Evento para cada vez que se modifique el texto
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             CalcularTotalIngresos();
@@ -103,7 +107,7 @@ namespace ProjectSGR
 
         private void btnAddViajes_Click(object sender, EventArgs e)
         {
-            //int comprobarV = int.Parse(txtCantViajes.Text);
+            
             int.TryParse(txtCantViajes.Text, out int comprobarV);
 
             if (comprobarV > 0 && comprobarV < 9){
@@ -137,11 +141,11 @@ namespace ProjectSGR
             txtTotalIngresos.Text = totalIngresos.ToString("0.00");
         }
 
-
+        //Evento que se activa al cargar el formulario
         private void frmCrearReporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bdSGRDataSet1.tbVehiculo' Puede moverla o quitarla según sea necesario.
-            //this.tbVehiculoTableAdapter1.Fill(this.bdSGRDataSet1.tbVehiculo);
+            
+            
             if(Operacion == "Crear")
             {
                 ListarVehi();
@@ -153,18 +157,26 @@ namespace ProjectSGR
             
         }
 
+        //Evento para evitar que no se escriban tipos de datos erróneos
         private void txtPiloto_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true; // Bloquea la tecla presionada
+                errorP.SetError(txtPiloto, "Solo se permiten números");
+            }
+            else
+            {
+                errorP.Clear();
             }
 
             if (e.KeyChar == (char)Keys.Enter)
-            { 
+            {
+                errorP.Clear();
                 txtAyudante.Focus();
-                e.Handled = true; 
+                e.Handled = true;
+                
             }
         }
 
@@ -173,12 +185,19 @@ namespace ProjectSGR
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true; // Bloquea la tecla presionada
+                errorP.SetError(txtCombustible, "Solo se permiten números");
+            }
+            else
+            {
+                errorP.Clear();
             }
 
             if (e.KeyChar == (char)Keys.Enter)
             {
+                errorP.Clear();
                 txtViaticos.Focus();
                 e.Handled = true;
+                
             }
         }
 
@@ -187,12 +206,19 @@ namespace ProjectSGR
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true; // Bloquea la tecla presionada
+                errorP.SetError(txtAyudante, "Solo se permiten números");
+            }
+            else
+            {
+                errorP.Clear();
             }
 
             if (e.KeyChar == (char)Keys.Enter)
             {
+                errorP.Clear();
                 txtCombustible.Focus();
                 e.Handled = true;
+                
             }
         }
 
@@ -201,11 +227,20 @@ namespace ProjectSGR
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true; // Bloquea la tecla presionada
+                errorP.SetError(txtViaticos, "Solo se permiten números");
             }
+            else
+            {
+                errorP.Clear();
+            }
+
+
             if (e.KeyChar == (char)Keys.Enter)
             {
+                errorP.Clear();
                 txtExtras.Focus();
                 e.Handled = true;
+                
             }
         }
 
@@ -217,14 +252,14 @@ namespace ProjectSGR
                 return;
             }
 
-            // Verifica si el punto decimal ya se ha ingresado.
+            // Verifica si el punto decimal ya se ha ingresado
             if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
                 return;
             }
 
-            // Verifica si se ha ingresado más de dos decimales.
+            // Verifica si se ha ingresado más de dos decimales
             if ((sender as System.Windows.Forms.TextBox).Text.Contains('.') 
                 && (sender as System.Windows.Forms.TextBox).Text.Split('.')[1].Length >= 2)
             {
@@ -240,15 +275,15 @@ namespace ProjectSGR
 
         }
 
-
+        //Método activado al presionar el botón Gaurdar
         private void btnCrear_Click(object sender, EventArgs e)
         {
 
-            
-            //int ide = frmVerReporte.idRepor;
             if (Operacion == "Crear")
             {
+
                 bool verificado = true;
+                fechaC = validarFecha();
                 listaInge.Clear(); //Limpia la lista
 
                 if (VerificarTextBoxLlenos())
@@ -278,7 +313,6 @@ namespace ProjectSGR
                     else
                     {
                         MessageBox.Show("Por favor, debe registrar los Ingresos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        // Recorre los TextBox dinámicos y registra sus valores en la lista
                         verificado = false;
                     }
                 }
@@ -289,8 +323,9 @@ namespace ProjectSGR
                     verificado = false;
                 }
 
-                if (verificado)
+                if (verificado && fechaC)
                 {
+                    errorP.Clear();
                     //Obtenemos los valores del formulario
                     reporte.CantViajes = int.Parse(txtCantViajes.Text);
                     reporte.IdVehiculo = (int)cBoxVehiculo.SelectedValue;
@@ -300,11 +335,9 @@ namespace ProjectSGR
                     reporte.PagoAyudante = int.Parse(txtAyudante.Text);
                     reporte.PagoCombustible = int.Parse(txtCombustible.Text);
                     reporte.PagoViaticos = int.Parse(txtViaticos.Text);
-                    //reporte.PagoExtras = decimal.Parse(txtExtras.Text);
                     reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
                     reporte.TotalEgresos = decimal.Parse(txtTotalEgresos.Text);
                     reporte.Capital = decimal.Parse(txtCapital.Text);
-                    //reporte.Comentario = txtComentario.Text;
                     reporte.IdUsuario = Usuarios.idUsuario;
                     reporte.Listado = listaInge;
                     Adicion();
@@ -312,20 +345,25 @@ namespace ProjectSGR
                     reporte.CrearReporte();
                     MessageBox.Show("Reporte creado exitosamente");
                     this.Close();
-                    
 
                 }
+                else
+                {
+                    errorP.SetError(datePick, "Ya existe un reporte para el vehículo con esa fecha \n"
+                    + "Por favor, cambie la fecha");
+                }
             }
-            else if(Operacion == "Editar"){
 
+            else if (Operacion == "Editar")
+            {
                 bool verificado = true;
-                listaInge.Clear(); //Limpia la lista
+                fechaC = validarFecha();
+                listaInge.Clear();
 
                 if (VerificarTextBoxLlenos())
                 {
                     if (controlI)
                     {
-                        //Recorrido de los TextBox dinámicos
                         foreach (Control control in panelViajes.Controls)
                         {
                             if (control is System.Windows.Forms.TextBox textBox)
@@ -334,9 +372,8 @@ namespace ProjectSGR
                                 {
                                     verificado = false;
 
-                                    MessageBox.Show("Por favor, ingrese un valor correcto en los Ingresos"
-                                        , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    break; // Si uno de los TextBox está vacío, se detiene la verificación
+                                    MessageBox.Show("Por favor, ingrese un valor correcto en los Ingresos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    break;
                                 }
                                 else if (decimal.TryParse(textBox.Text, out decimal valor))
                                 {
@@ -348,11 +385,9 @@ namespace ProjectSGR
                     else
                     {
                         MessageBox.Show("Por favor, debe registrar los Ingresos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        // Recorre los TextBox dinámicos y registra sus valores en la lista
                         verificado = false;
                     }
                 }
-
                 else
                 {
                     MessageBox.Show("Por favor, debe llenar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -361,37 +396,76 @@ namespace ProjectSGR
 
                 if (verificado)
                 {
-                    //Obtenemos los valores del formulario
-                    reporte.CantViajes = int.Parse(txtCantViajes.Text);
-                    reporte.IdVehiculo = (int)cBoxVehiculo.SelectedValue;
-                    reporte.Fecha = datePick.Value;
-                    reporte.Turno = (int)nTurno.Value;
-                    reporte.PagoPiloto = int.Parse(txtPiloto.Text);
-                    reporte.PagoAyudante = int.Parse(txtAyudante.Text);
-                    reporte.PagoCombustible = int.Parse(txtCombustible.Text);
-                    reporte.PagoViaticos = int.Parse(txtViaticos.Text);
-                    //reporte.PagoExtras = decimal.Parse(txtExtras.Text);
-                    reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
-                    reporte.TotalEgresos = decimal.Parse(txtTotalEgresos.Text);
-                    reporte.Capital = decimal.Parse(txtCapital.Text);
-                    //reporte.Comentario = txtComentario.Text;
-                    reporte.IdUsuario = Usuarios.idUsuario;
-                    reporte.Listado = listaInge;
-                    Adicion();
-                    
-                    Console.WriteLine(idd);
-                    reporte.EditarReporte(idd);
-                    
-                    Operacion = "Crear";
-                    MessageBox.Show("Reporte actualizado exitosamente");
-                    this.Close();
-                    
+                    //Obtiene la fecha original
+                    DateTime fechaOriginal = fechaOri;
+
+                    //Compara la fecha original con la nueva fecha
+                    if (fechaOriginal != datePick.Value)
+                    {
+                        //Verifica si ya existe un reporte con la nueva fecha y el mismo vehículo
+                        if (!validarFecha())
+                        {
+                            errorP.SetError(datePick, "Ya existe un reporte para el vehículo con esa fecha \n"
+                            + "Por favor, cambie la fecha");
+                        }
+                        else
+                        {
+                            //La nueva fecha no existe en otro reporte, procede con la edición
+                            errorP.Clear();
+                            reporte.CantViajes = int.Parse(txtCantViajes.Text);
+                            reporte.IdVehiculo = (int)cBoxVehiculo.SelectedValue;
+                            reporte.Fecha = datePick.Value;
+                            reporte.Turno = (int)nTurno.Value;
+                            reporte.PagoPiloto = int.Parse(txtPiloto.Text);
+                            reporte.PagoAyudante = int.Parse(txtAyudante.Text);
+                            reporte.PagoCombustible = int.Parse(txtCombustible.Text);
+                            reporte.PagoViaticos = int.Parse(txtViaticos.Text);
+                            reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
+                            reporte.TotalEgresos = decimal.Parse(txtTotalEgresos.Text);
+                            reporte.Capital = decimal.Parse(txtCapital.Text);
+                            reporte.IdUsuario = Usuarios.idUsuario;
+                            reporte.Listado = listaInge;
+                            Adicion();
+
+                            // Realiza la edición del reporte
+                            reporte.EditarReporte(idd);
+
+                            Operacion = "Crear";
+                            MessageBox.Show("Reporte actualizado exitosamente");
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        //La fecha no ha cambiado, puedes proceder con la edición sin verificar nuevamente
+                        errorP.Clear();
+                        reporte.CantViajes = int.Parse(txtCantViajes.Text);
+                        reporte.IdVehiculo = (int)cBoxVehiculo.SelectedValue;
+                        reporte.Fecha = fechaOriginal; //Restaura la fecha original
+                        reporte.Turno = (int)nTurno.Value;
+                        reporte.PagoPiloto = int.Parse(txtPiloto.Text);
+                        reporte.PagoAyudante = int.Parse(txtAyudante.Text);
+                        reporte.PagoCombustible = int.Parse(txtCombustible.Text);
+                        reporte.PagoViaticos = int.Parse(txtViaticos.Text);
+                        reporte.TotalIngresos = decimal.Parse(txtTotalIngresos.Text);
+                        reporte.TotalEgresos = decimal.Parse(txtTotalIngresos.Text);
+                        reporte.Capital = decimal.Parse(txtCapital.Text);
+                        reporte.IdUsuario = Usuarios.idUsuario;
+                        reporte.Listado = listaInge;
+                        Adicion();
+
+                        // Realiza la edición del reporte
+                        reporte.EditarReporte(idd);
+
+                        Operacion = "Crear";
+                        MessageBox.Show("Reporte actualizado exitosamente");
+                        this.Close();
+                    }
                 }
-
             }
-
         }
 
+        //Método para calcular en tiempo real los egresos
         private void CalcularTotalEgresos()
         {
             decimal totalPagos = 0;
@@ -446,6 +520,7 @@ namespace ProjectSGR
             CalcularTotalEgresos();
         }
 
+        //Método para el botón cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -461,6 +536,7 @@ namespace ProjectSGR
             CalcularCapital();
         }
 
+        //Método para Calcular el Capital del Reporte
         private void CalcularCapital()
         {
             if (decimal.TryParse(txtTotalIngresos.Text, out decimal totalIngresos) &&
@@ -471,7 +547,7 @@ namespace ProjectSGR
             }
             else
             {
-                txtCapital.Text = ""; // Deja el TextBox de "Capital" en blanco si no se pueden analizar los valores.
+                txtCapital.Text = ""; // Deja el TextBox de "Capital" en blanco si no se pueden analizar los valores
             }
         }
 
@@ -483,7 +559,6 @@ namespace ProjectSGR
                 !string.IsNullOrWhiteSpace(txtAyudante.Text) &&
                 !string.IsNullOrWhiteSpace(txtCombustible.Text) &&
                 !string.IsNullOrWhiteSpace(txtViaticos.Text) &&
-                //!string.IsNullOrWhiteSpace(txtExtras.Text) &&
                 !string.IsNullOrWhiteSpace(txtCantViajes.Text)
             )
             {
@@ -496,6 +571,7 @@ namespace ProjectSGR
             }
         }
 
+        //Método para asignarle un valor por defecto a Extras y Comentario, o para obtener su valor del TextBox
         private void Adicion()
         {
             decimal valorExtras = 0;
@@ -526,16 +602,30 @@ namespace ProjectSGR
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true; // Bloquea la tecla presionada
+                errorP.SetError(txtCantViajes, "Solo se permiten números 1-8");
+            }
+            else
+            {
+                errorP.Clear();
+            }
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                errorP.Clear();
+                btnAddViajes.Focus();
+                e.Handled = true;
+                
             }
         }
 
+        //Botón para limpiar el apartado de ingresos
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             panelViajes.Controls.Clear();
             btnLimpiar.Visible = false;
             controlI = false;
         }
-        //prueba
+        
         private void txtComentario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -545,6 +635,7 @@ namespace ProjectSGR
             }
         }
 
+        //Método para listar los Vehículos
         public void ListarVehi()
         {
             cBoxVehiculo.DataSource = reporte.ListarVe();
@@ -552,7 +643,47 @@ namespace ProjectSGR
             cBoxVehiculo.ValueMember = "IdVehiculo";
         }
 
-        
+        public bool validarFecha()
+        {
+            bool validar = reporte.VerificarFecha((int)cBoxVehiculo.SelectedValue, datePick.Value);
+
+            if (validar)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+
+            }
+        }
+
+        private void datePick_ValueChanged(object sender, EventArgs e)
+        {
+            btnCrear.Enabled = true;
+        }
+
+        private void btnCrear_Enter(object sender, EventArgs e)
+        {
+            btnCrear.FlatAppearance.BorderSize = 1;
+            btnCrear.FlatAppearance.BorderColor = Color.White;
+        }
+
+        private void btnCrear_Leave(object sender, EventArgs e)
+        {
+            btnCrear.FlatAppearance.BorderSize = 0;
+        }
+
+        private void btnAddViajes_Enter(object sender, EventArgs e)
+        {
+            btnAddViajes.FlatAppearance.BorderSize = 1;
+            btnAddViajes.FlatAppearance.BorderColor = Color.White;
+        }
+
+        private void btnAddViajes_Leave(object sender, EventArgs e)
+        {
+            btnAddViajes.FlatAppearance.BorderSize = 0;
+        }
     }
 }
 

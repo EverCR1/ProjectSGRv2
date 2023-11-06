@@ -36,6 +36,7 @@ namespace ProjectSGR
         listarReporteTableAdapter listarReporte = new listarReporteTableAdapter();
         pListarIngresosTableAdapter listarIngreso = new pListarIngresosTableAdapter();
         ListarVehiculosTableAdapter listaVe = new ListarVehiculosTableAdapter();
+
         //Método para crear reportes
         public void CrearReporte()
         {
@@ -45,22 +46,22 @@ namespace ProjectSGR
             // Crear un DataTable
             DataTable dataTable = new DataTable();
 
-            DataColumn reporteColumn = new DataColumn("idReporte", typeof(int)); // Ajusta el tipo de datos según tu lista
+            DataColumn reporteColumn = new DataColumn("idReporte", typeof(int)); 
             dataTable.Columns.Add(reporteColumn);
-            // Agregar la columna "IdVuelta" con autoincremento
+            
             DataColumn idVueltaColumn = new DataColumn("idVuelta", typeof(int));
             idVueltaColumn.AutoIncrement = true;
             idVueltaColumn.AutoIncrementSeed = 1; // Comenzar en 1
             idVueltaColumn.AutoIncrementStep = 1; // Incrementar en 1
             dataTable.Columns.Add(idVueltaColumn);
 
-            // Agregar la columna "Ingreso" (debes ajustar el tipo de datos según la lista)
-            DataColumn ingresoColumn = new DataColumn("Ingreso", typeof(decimal)); // Ajusta el tipo de datos según tu lista
+            // Agregar la columna Ingreso
+            DataColumn ingresoColumn = new DataColumn("Ingreso", typeof(decimal)); 
             dataTable.Columns.Add(ingresoColumn);
 
 
-            // Obtener una lista de ingresos (reemplaza con tu propia lista)
-            List<decimal> listaIngresos = Listado; // Reemplaza esta línea con tu lista
+            // Obtener una lista de ingresos 
+            List<decimal> listaIngresos = Listado; 
 
             // Llenar el DataTable con los datos de la lista
             foreach (decimal ingreso in listaIngresos)
@@ -71,6 +72,7 @@ namespace ProjectSGR
                 dataTable.Rows.Add(newRow);
             }
 
+            //Obtiene los valores de las variables de la clase
             adapter.pCrearReporte(CantViajes, IdVehiculo, Fecha, tyn, PagoPiloto, PagoAyudante,
                 PagoCombustible, PagoViaticos, PagoExtras, TotalIngresos, TotalEgresos,
                 Capital, Comentario, IdUsuario, dataTable);
@@ -93,7 +95,7 @@ namespace ProjectSGR
             return dataTable;
         }
 
-        //Método para Listar nombres de Vehiculos
+        //Método para Listar nombres de Vehiculos en el reporte
         public DataTable ListarVe()
         {
             DataTable dataTable = new DataTable();
@@ -112,22 +114,22 @@ namespace ProjectSGR
             // Crear un DataTable
             DataTable dataTable = new DataTable();
 
-            DataColumn reporteColumn = new DataColumn("idReporte", typeof(int)); // Ajusta el tipo de datos según tu lista
+            DataColumn reporteColumn = new DataColumn("idReporte", typeof(int)); 
             dataTable.Columns.Add(reporteColumn);
-            // Agregar la columna "IdVuelta" con autoincremento
+
             DataColumn idVueltaColumn = new DataColumn("idVuelta", typeof(int));
             idVueltaColumn.AutoIncrement = true;
             idVueltaColumn.AutoIncrementSeed = 1; // Comenzar en 1
             idVueltaColumn.AutoIncrementStep = 1; // Incrementar en 1
             dataTable.Columns.Add(idVueltaColumn);
 
-            // Agregar la columna "Ingreso" (debes ajustar el tipo de datos según la lista)
-            DataColumn ingresoColumn = new DataColumn("Ingreso", typeof(decimal)); // Ajusta el tipo de datos según tu lista
+            // Agregar la columna Ingreso
+            DataColumn ingresoColumn = new DataColumn("Ingreso", typeof(decimal)); 
             dataTable.Columns.Add(ingresoColumn);
 
 
-            // Obtener una lista de ingresos (reemplaza con tu propia lista)
-            List<decimal> listaIngresos = Listado; // Reemplaza esta línea con tu lista
+            // Obtener una lista de ingresos
+            List<decimal> listaIngresos = Listado;
 
             // Llenar el DataTable con los datos de la lista
             foreach (decimal ingreso in listaIngresos)
@@ -138,6 +140,7 @@ namespace ProjectSGR
                 dataTable.Rows.Add(newRow);
             }
 
+            //Obtener el valor de las variables de la clase
             adapter.pEditarReporte(idRep, CantViajes, IdVehiculo, Fecha, tyn, PagoPiloto, PagoAyudante,
                 PagoCombustible, PagoViaticos, PagoExtras, TotalIngresos, TotalEgresos,
                 Capital, Comentario, IdUsuario, dataTable);
@@ -146,15 +149,31 @@ namespace ProjectSGR
         //Método para Eliminar Reportes
         public void EliminarReporte(int idRep)
         {
-            adapter.pEliminarReporte(idRep);
+            adapter.pEliminarReporte(idRep); //Se elimina el reporte con el id proporcionado
         }
 
         //Método para Buscar Reportes
         public DataTable BuscarReporte(DateTime fechaInicio, DateTime fechaFinal)
         {
             DataTable dataTable = new DataTable();
-            dataTable = buscarReporte.GetData(fechaInicio, fechaFinal);
+            dataTable = buscarReporte.GetData(fechaInicio, fechaFinal); //Se busca el/los reportes de acuerdo al intervalo
             return dataTable;
+        }
+
+        //Método para validar reportes, 1 por día
+        public bool VerificarFecha(int idVehiculo, DateTime Fecha)
+        {
+            int validar = (int)adapter.VerificarReporte(idVehiculo, Fecha); //Obtiene el id del vehiculo y la fecha
+
+            if (validar == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

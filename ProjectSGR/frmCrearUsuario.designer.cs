@@ -109,24 +109,28 @@
             this.txtDPI.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.txtDPI, "txtDPI");
             this.txtDPI.Name = "txtDPI";
+            this.txtDPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDPI_KeyPress);
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.txtNombre, "txtNombre");
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtApellido
             // 
             this.txtApellido.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.txtApellido, "txtApellido");
             this.txtApellido.Name = "txtApellido";
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.txtUsername, "txtUsername");
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // cbCargo
             // 
